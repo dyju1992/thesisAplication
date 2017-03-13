@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ThesisApplication</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="version_select_title">Please choose your account version</string>
+
+    <string-array name="accountVersion">
+        <item>Select your account type</item>
+        <item>Education</item>
+        <item>PRO</item>
+    </string-array>
+
+
+</resources>
