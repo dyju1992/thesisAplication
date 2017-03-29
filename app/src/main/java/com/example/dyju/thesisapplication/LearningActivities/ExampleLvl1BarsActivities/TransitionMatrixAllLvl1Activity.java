@@ -16,7 +16,7 @@ public class TransitionMatrixAllLvl1Activity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.dh_lvl1_activity, container, false);
+        View view = inflater.inflate(R.layout.trans_matrix_all_lvl1_activity, container, false);
 
         return view;
 

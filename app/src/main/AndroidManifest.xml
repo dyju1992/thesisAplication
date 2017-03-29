@@ -18,34 +18,50 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:label="Register new user"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
             android:label="Login"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ProMenuActivity"
             android:label="Welcome in PRO version"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EducationMenuActivity"
             android:label="Welcome in Education version"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LearningLvl1Activity"
             android:label="Learning level 1"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LearningLvl2Activity"
             android:label="Learning level 2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ExamplesActivity"
             android:label="Examples"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LearningActivities.AboutInverseActivity"
+            android:label="Examples"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LearningActivities.ForWhoLvl1Activity"
+            android:label="Examples"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LearningActivities.AboutManipulatorBars.AboutManipulatorActivity"
+            android:label="@string/title_activity_about_manipulator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LearningActivities.ExampleLvl1BarsActivities.ExampleLvl1Activity"
+            android:label="@string/title_activity_example_lvl1"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

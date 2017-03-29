@@ -12,33 +12,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Serdecznie chciałbym powitac w aplikacji mobilnej stworzonej w ramach pracy magisterskiej." />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter to the application"
+        android:text="O aplikacji"
+        android:id="@+id/aboutApp"
+        android:layout_marginTop="50dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dla kogo została stworzona ta aplikacja?"
+        android:id="@+id/whoShouldHave"
+        android:layout_marginTop="100dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Przejdź do aplikacji"
         android:id="@+id/goTOApplication"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="70dp" />
-
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Add new user"-->
-        <!--android:id="@+id/addNewUser"/>-->
-
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Add new user"-->
-        <!--android:id="@+id/registerButton"/>-->
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Show User"
         android:id="@+id/showPrzemek"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="150dp"/>
 </RelativeLayout>

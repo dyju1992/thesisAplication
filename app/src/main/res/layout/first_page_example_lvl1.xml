@@ -11,9 +11,39 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Współrzędne Denavita Hartenberga" />
+        android:text="Zadanie odwrotne kinematyki manipulatora składa się z nastepujących etapów:" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="1. Oznaczenie na rysunku przedstawiającym manipulator kątów oraz długości poszczególnych ogniw, mające wpływ na pozycję chwytaka"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="2. Uzupełnienie w tabeli Notację Denavita Hartenberga"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="3. Uzupełnienie macierzy przejścia między poszczególnymi ogniwami"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="4. Wymnożenie wszystkich macierzy przejścia"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="5. Znając pozycję i orientację końcówki manipulatora wyznaczyc poszczególne zmienne."/>
+
+
 
 
 

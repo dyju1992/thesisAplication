@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Podstawowe informacje na temat manipulatorów:"
+            android:textColor="#0000ff"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/manipulator"
+        android:layout_marginTop="70dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manipulator jest to urządzenie, które posiada kilka połączonych ze soba
+        i przemieszczających się członów. Jest to maszyna o wielu stopniach swobody."
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zastosowanie mainipulatorów:"
+        android:textSize="18dp"
+        android:layout_marginTop="450dp"
+        android:id="@+id/manipulatorPurposes"/>
+    <!--&lt;!&ndash;&lt;!&ndash;<ListView&ndash;&gt;&ndash;&gt;-->
+        <!--android:id="@+id/listView1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginTop="480dp">-->
+    <!--</ListView>-->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zastosowanie manipulatorów"
+            android:layout_marginTop="650dp"/>
+
+
+    </RelativeLayout>
+
+
+
+</ScrollView>

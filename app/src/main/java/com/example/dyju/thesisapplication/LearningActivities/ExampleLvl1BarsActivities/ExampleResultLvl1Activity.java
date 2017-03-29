@@ -17,7 +17,7 @@ public class ExampleResultLvl1Activity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
 
-        View view = inflater.inflate(R.layout.first_example_image_with_dimensions_activity, container, false);
+        View view = inflater.inflate(R.layout.example_result_lvl1_activity, container, false);
         return view;
 
 

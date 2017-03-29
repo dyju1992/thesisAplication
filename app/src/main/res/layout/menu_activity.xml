@@ -10,9 +10,9 @@
     tools:context="com.example.dyju.thesisapplication.MenuActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Aby przejść dalej do aplikacji należy mieć założone konto użytkownika. Jeżeli takie posiadasz przejdź do logowania, jeżeli jeszcze nie posiadasz konta przejdź do rejestracji i za kilka chwil ciesz się z pełnego dostępu do aplikacji."/>
 
     <!--<Button-->
         <!--android:layout_width="match_parent"-->
@@ -32,13 +32,14 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add new user"
-        android:id="@+id/registerButton"/>
+        android:text="Dodaj nowe konto użytkownika"
+        android:id="@+id/registerButton"
+        android:layout_marginTop="100dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Zaloguj"
         android:id="@+id/loginUser1"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="200dp"/>
 </RelativeLayout>
