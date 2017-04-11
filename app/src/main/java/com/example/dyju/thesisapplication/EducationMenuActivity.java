@@ -24,7 +24,7 @@ public class EducationMenuActivity extends AppCompatActivity {
 
     Button examplesbtn;
 
-    public void init(){
+    public void init(final User user){
 
         learningLvl1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +47,7 @@ public class EducationMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EducationMenuActivity.this, ExamplesActivity.class);
+                intent.putExtra("user", user);
                 startActivity(intent);
             }
         });
@@ -58,7 +59,7 @@ public class EducationMenuActivity extends AppCompatActivity {
         setContentView(R.layout.education_menu_activity);
         User user = (User)getIntent().getSerializableExtra("user");
         setPageByUserData(user);
-        init();
+        init(user);
     }
 
     private void setPageByUserData(User user) {

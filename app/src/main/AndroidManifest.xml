@@ -63,6 +63,14 @@
             android:name=".LearningActivities.ExampleLvl1BarsActivities.ExampleLvl1Activity"
             android:label="@string/title_activity_example_lvl1"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesDhActivity"
+            android:label="@string/title_activity_example_lvl1"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesEx1Activity"
+            android:label="@string/title_activity_example_lvl1"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

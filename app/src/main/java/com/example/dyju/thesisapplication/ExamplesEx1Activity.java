@@ -8,34 +8,32 @@ import android.widget.Button;
 
 import UsersPackage.User;
 
-/**
- * Created by dyju on 2017-03-13.
- */
-public class ExamplesActivity extends AppCompatActivity {
 
-    Button ex1Button;
+public class ExamplesEx1Activity extends AppCompatActivity {
 
+
+    Button toDhButton;
 
     public void init(final User user){
 
-        ex1Button = (Button) findViewById(R.id.buttonEx1);
-        ex1Button.setOnClickListener(new View.OnClickListener(){
+        toDhButton = (Button) findViewById(R.id.toDhButton);
+
+        toDhButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(ExamplesActivity.this, ExamplesEx1Activity.class);
+                Intent intent = new Intent(ExamplesEx1Activity.this, ExamplesDhActivity.class);
                 intent.putExtra("user", user);
+                intent.putExtra("exName", "first_manipulator");
                 startActivity(intent);
             }
         });
 
-
     }
-
 
 
     protected void onCreate(Bundle savedInstancedSave){
         super.onCreate(savedInstancedSave);
-        setContentView(R.layout.examples_activity);
+        setContentView(R.layout.examples_ex1_activity);
         User user = (User) getIntent().getSerializableExtra("user");
         init(user);
     }

@@ -12,14 +12,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Witam w przykładach podsumowujących naukę zadania odwrotnego kinematyki manipulatorów" />
+        android:text="Rozpatrzymy teraz następujący manipulator. Przygotuj na kartce notacje DH dla tego manipulatora i gdy będziesz gotów nacisnij dalej.  " />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonEx1"
-        android:text="Zadanie 1"
-        android:layout_marginTop="50dp"/>
+        android:id="@+id/toDhButton"
+        android:layout_marginTop="50dp"
+        android:text="Dalej"/>
+
+
 
 
 </RelativeLayout>
