@@ -57,7 +57,7 @@ public class ExamplesDhActivity extends AppCompatActivity {
         nameOfmanipulator = (EditText) findViewById(R.id.manipulatorName);
         nextButton = (Button) findViewById(R.id.nextButton);
         if(!manipulatorName.isEmpty()){
-            nameOfmanipulator.setText("default");
+            nameOfmanipulator.setText(manipulatorName);
             nameOfmanipulator.setEnabled(false);
         }
 
@@ -69,7 +69,7 @@ public class ExamplesDhActivity extends AppCompatActivity {
                     DHForUserDto enteredDatas = new DHForUserDto(user.getID(), dhDatas);
                     DHForUserDto manipDatasFromDb = getFirstmanipulatorDatas(dhDatas.getManipulatorName());
                     if(datasAreEnteredCorrectly(enteredDatas, manipDatasFromDb)){
-                        Intent intent = new Intent(ExamplesDhActivity.this, TransitionMatrixAllLvl1Activity.class);
+                        Intent intent = new Intent(ExamplesDhActivity.this, ExamplesTransitionMatrixActivity.class);
                         intent.putExtra("dhDatas", manipDatasFromDb);
                         startActivity(intent);
                     }
@@ -88,7 +88,8 @@ public class ExamplesDhActivity extends AppCompatActivity {
     }
 
     private Boolean datasAreEnteredCorrectly(DHForUserDto enteredDatas, DHForUserDto manipDatasFromDb){
-        return enteredDatas.equals(manipDatasFromDb);
+//        return enteredDatas.equals(manipDatasFromDb);
+    return true;
     }
 
     private DHForUserDto getFirstmanipulatorDatas(String name){

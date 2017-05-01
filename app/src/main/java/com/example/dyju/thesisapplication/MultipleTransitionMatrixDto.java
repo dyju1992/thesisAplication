@@ -1,17 +1,19 @@
 package com.example.dyju.thesisapplication;
 
+import java.io.Serializable;
+
 /**
  * Created by dyju on 2017-04-30.
  */
-public class MultipleTransitionMatrixDto {
+public class MultipleTransitionMatrixDto implements Serializable{
 
     String[][] firstMatrix;
 
-    String[][] secondMatrix;
-
-    public MultipleTransitionMatrixDto(String[][] firstMatrix, String[][] secondMatrix) {
+    public MultipleTransitionMatrixDto(String[][] firstMatrix) {
         this.firstMatrix = firstMatrix;
-        this.secondMatrix = secondMatrix;
+    }
+
+    public MultipleTransitionMatrixDto() {
     }
 
     public String[][] getFirstMatrix() {
@@ -22,11 +24,4 @@ public class MultipleTransitionMatrixDto {
         this.firstMatrix = firstMatrix;
     }
 
-    public String[][] getSecondMatrix() {
-        return secondMatrix;
-    }
-
-    public void setSecondMatrix(String[][] secondMatrix) {
-        this.secondMatrix = secondMatrix;
-    }
 }

@@ -13,7 +13,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Uzupełnienie macierzy przejścia między poszczególnymi ogniwami" />
+        android:text="Wprowadź odpoweidnie wartości macierzy przejścia z układu 0 do 3" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstTextViewValue"
+        android:layout_marginTop="60dp"
+        android:textSize="15dp"
+        android:textColor="#1849bc"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:id="@+id/firstEditValue"
+        android:hint="sin(alpha1(t))*cos(theta2(t))"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondTextViewValue"
+        android:layout_marginTop="140dp"
+        android:textSize="15dp"
+        android:textColor="#1849bc"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:id="@+id/secondEditValue"
+        android:hint="cos(alpha1(t))*l2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextButton"
+        android:layout_marginTop="200dp"
+        android:text="Dalej"/>
 
 
 

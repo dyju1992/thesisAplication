@@ -73,36 +73,96 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList<DhDatas> getDhForUser(User user){
+    public ArrayList<DHForUserDto> getDhForUser(User user){
         String query = "SELECT "+ MANIPULATOR_NAME + "," + ALPHA_ANGLES  + "," + THETA_ANGLES  + "," + A_DIMENSIONS  + "," + D_DIMENSIONS + " FROM "+ DH_TABLE + " WHERE " + USER_ID + " = \"" + user.getID() + "\"";
         return queryExecutor(query);
     }
 
-    public Boolean datasArentBeOnDb(DbHandlerMatrix dbHandlerMatrix, String manipulatorName){
-        String query = "SELECT * FROM "+ DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + manipulatorName + "\"";
-        return queryExecutor(query).size()>0;
+    public ArrayList<DHForUserDto> getDhForManipulatorName(String name){
+        String query = "SELECT "+ MANIPULATOR_NAME + "," + ALPHA_ANGLES  + "," + THETA_ANGLES  + "," + A_DIMENSIONS  + "," + D_DIMENSIONS + " FROM "+ DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + name + "\"";
+        return queryExecutor(query);
     }
 
-    private ArrayList<DhDatas> queryExecutor(String query){
+    public Boolean datasArentBeOnDb(String manipulatorName){
+        String query = "SELECT * FROM "+ DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + manipulatorName + "\"";
+        return !(queryExecutor(query).size() >0);
+    }
+
+    public void deleteRowByName(String name){
         SQLiteDatabase db = this.getReadableDatabase();
+        db.delete(DH_TABLE, USER_ID+"=? and "+MANIPULATOR_NAME+" =?", new String[]{"-1", name});
+        db.close();
 
-        Cursor cursor = db.rawQuery(query, null);
-        ArrayList<DhDatas> dhDatasList = new ArrayList<>();
+    }
 
-        while(cursor.moveToNext()){
-            DhDatas dhDatas = new DhDatas();
-            dhDatas.setManipulatorName(cursor.getString(0));
-            dhDatas.setAlpha(cursor.getString(1));
-            dhDatas.setTheta(cursor.getString(2));
-            dhDatas.setA(cursor.getString(3));
-            dhDatas.setD(cursor.getString(4));
-            dhDatasList.add(dhDatas);
-
+    private ArrayList<DHForUserDto> queryExecutor(String query){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int i = 0;
+        if(i>2) {
+            System.out.println("Zapętlenie, nie można utworzyć tabali dh na bazie");
+            return new ArrayList<>();
         }
 
-        cursor.close();
-        db.close();
-        return dhDatasList;
+        try {
+            Cursor cursor = db.rawQuery(query, null);
+            ArrayList<DHForUserDto> dhDatasList = new ArrayList<>();
+
+            while(cursor.moveToNext()){
+                DHForUserDto dhForUserDto = new DHForUserDto();
+                dhForUserDto.setUserid(-1);
+                DhDatas dhDatas = new DhDatas();
+                dhDatas.setAlpha(cursor.getString(1));
+                dhDatas.setTheta(cursor.getString(2));
+                dhDatas.setD(cursor.getString(4));
+                dhDatas.setA(cursor.getString(3));
+                dhDatas.setManipulatorName(cursor.getString(0));
+                dhForUserDto.setDhDatas(dhDatas);
+//                dhDatas.setAlpha(cursor.getString(1));
+//                dhDatas.setTheta(cursor.getString(2));
+//                dhDatas.setA(cursor.getString(3));
+//                dhDatas.setD(cursor.getString(4));
+                dhDatasList.add(dhForUserDto);
+
+            }
+
+            cursor.close();
+            db.close();
+            return dhDatasList;
+        }catch (Exception e){
+            i++;
+            onCreate(db);
+            return queryExecutor(query);
+        }
+
+    }
+
+    public void insertManipulatorMockDataToDb(String manipulatorName){
+        DHForUserDto dhForUserDto = getDatasForManipulatorName(manipulatorName);
+        addNewDataAboutmanipulator(dhForUserDto);
+    }
+    private DHForUserDto getDatasForManipulatorName(String name){
+        DHForUserDto dhForUserDto = new DHForUserDto();
+        dhForUserDto.setUserid(-1);
+        DhDatas dhDatas = new DhDatas();
+        switch (name){
+            case "first_manipulator":
+                dhDatas.setAlpha("0,0,0,90,90");
+                dhDatas.setA("0,l1,l2,0,l4");
+                dhDatas.setD("0,0,0,d4(t),0");
+                dhDatas.setTheta("theta1(t),theta2(t),theta3(t),180,theta5(t)");
+                dhDatas.setManipulatorName(name);
+                break;
+
+            case "default":
+                dhDatas.setA("1");
+                dhDatas.setAlpha("1");
+                dhDatas.setD("1");
+                dhDatas.setTheta("1");
+                dhDatas.setManipulatorName("default");
+        }
+        dhForUserDto.setDhDatas(dhDatas);
+
+        return dhForUserDto;
     }
 
 //    private String getQueryForManipulatorName(String name){

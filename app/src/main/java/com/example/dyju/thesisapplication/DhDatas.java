@@ -1,9 +1,11 @@
 package com.example.dyju.thesisapplication;
 
+import java.io.Serializable;
+
 /**
  * Created by dyju on 2017-04-09.
  */
-public class DhDatas {
+public class DhDatas implements Serializable {
 
     private String theta;
 

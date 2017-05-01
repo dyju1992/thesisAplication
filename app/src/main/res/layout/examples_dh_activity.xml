@@ -14,43 +14,43 @@
         android:layout_height="wrap_content"
         android:text="Wprawadz odpowiednie parametry od 0 do n po przecinku" />
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="alpha"
-        android:id="@+id/alpha"
-        android:layout_marginTop="50dp"/>
-
-    <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="manipulator name"
         android:id="@+id/manipulatorName"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="50dp"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="alpha"
+        android:id="@+id/alpha"
+        android:layout_marginTop="90dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="theta"
         android:id="@+id/theta"
-        android:layout_marginTop="110dp" />
+        android:layout_marginTop="130dp" />
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="a"
         android:id="@+id/aLength"
-        android:layout_marginTop="140dp"/>
+        android:layout_marginTop="170dp"/>
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="d"
         android:id="@+id/dLength"
-        android:layout_marginTop="170dp"/>
+        android:layout_marginTop="210dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/nextButton"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="250dp"
         android:text="Dalej"/>
 
 

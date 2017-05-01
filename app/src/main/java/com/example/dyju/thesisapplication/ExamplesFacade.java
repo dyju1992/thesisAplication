@@ -18,12 +18,6 @@ public class ExamplesFacade extends AppCompatActivity implements IExamplesFacade
     }
 
     @Override
-    public void validateData() {
-
-        System.out.println("Dziala, yupppppiiiii");
-    }
-
-    @Override
     public Boolean dhDatasAreEntered(DhDatas dhDatas) {
         return !dhDatas.getAlpha().isEmpty() && !dhDatas.getTheta().isEmpty() && !dhDatas.getA().isEmpty() && !dhDatas.getD().isEmpty() && !dhDatas.getManipulatorName().isEmpty();
     }
@@ -34,16 +28,43 @@ public class ExamplesFacade extends AppCompatActivity implements IExamplesFacade
     }
 
     @Override
-    public ArrayList<DhDatas> getManpulatorsDatasForUser(User user, DbHandlerMatrix dbHandlerMatrix) {
+    public ArrayList<DHForUserDto> getManpulatorsDatasForUser(User user, DbHandlerMatrix dbHandlerMatrix) {
 //        dbHandlerMatrix.onCreate(dbHandlerMatrix);
         return dbHandlerMatrix.getDhForUser(user);
     }
 
     @Override
     public void addMockDataToDb(String manipulatorName, DbHandlerMatrix dbHandlerMatrix) {
-        if(dbHandlerMatrix.datasArentBeOnDb(dbHandlerMatrix, manipulatorName)){
-//            dbHandlerMatrix.insertManipulatorMockDataToDb(manipulatorName, dbHandlerMatrix);
-        }
+            if(dbHandlerMatrix.datasArentBeOnDb(manipulatorName)){
+                dbHandlerMatrix.insertManipulatorMockDataToDb(manipulatorName);
+            }
+
     }
 
+    @Override
+    public DHForUserDto getDhDatasForManipulatorName(String manipulatorName, DbHandlerMatrix dbHandlerMatrix){
+            ArrayList<DHForUserDto> dhForUserDtoArrayList = new ArrayList<>();
+        try{
+            dhForUserDtoArrayList = dbHandlerMatrix.getDhForManipulatorName(manipulatorName);
+            if(dhForUserDtoArrayList.size()==0){
+                dhForUserDtoArrayList = addMockDhAndSelect(manipulatorName, dbHandlerMatrix);
+
+            }
+        }catch (Exception e){
+                dhForUserDtoArrayList = addMockDhAndSelect(manipulatorName, dbHandlerMatrix);
+            }
+        return dhForUserDtoArrayList.get(0);
+
+    }
+
+    private ArrayList<DHForUserDto> addMockDhAndSelect(String name, DbHandlerMatrix dbHandlerMatrix){
+        dbHandlerMatrix.insertManipulatorMockDataToDb(name);
+        return dbHandlerMatrix.getDhForManipulatorName(name);
+
+    }
 }
+
+
+//CREATE_DH_TABLE = "CREATE TABLE "+DH_TABLE+"("+ ID + " INTEGER PRIMARY KEY," +
+//        USER_ID + " INTEGER," + ALPHA_ANGLES + " TEXT," + THETA_ANGLES + " TEXT," +
+//        D_DIMENSIONS + " TEXT, " + A_DIMENSIONS + " TEXT, " + MANIPULATOR_NAME+" TEXT)";

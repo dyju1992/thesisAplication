@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.dyju.thesisapplication.ExamplesDhActivity;
 import com.example.dyju.thesisapplication.R;
 
 import UsersPackage.User;
