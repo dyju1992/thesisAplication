@@ -1,17 +1,16 @@
-package com.example.dyju.thesisapplication;
+package com.example.dyju.thesisapplication.ProUsersClasses;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
+
+import com.example.dyju.thesisapplication.R;
 
 import UsersPackage.User;
 
 /**
  * Created by dyju on 2017-02-23.
  */
-public class ProMenuActivity extends AppCompatActivity {
-
-    TextView welcomeText;
+public class AddNewManipulatorActivity extends AppCompatActivity {
 
     public void init(){
         System.out.println("dziala");
@@ -22,13 +21,11 @@ public class ProMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pro_menu_activity);
         User user = (User)getIntent().getSerializableExtra("user");
-        setPageByUserData(user);
+
+
         init();
     }
 
-    private void setPageByUserData(User user) {
-        welcomeText = (TextView)findViewById(R.id.welcomeText);
-        welcomeText.setText("Witaj " + user.get_name());
-    }
+
 
 }
