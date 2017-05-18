@@ -14,6 +14,13 @@ public class MenuActivity extends AppCompatActivity {
     Button registerButton;
     Button loginButton;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.menu_activity);
+        init();
+    }
+
     public void init(){
         registerButton = (Button)findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener(){
@@ -35,11 +42,6 @@ public class MenuActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_activity);
-        init();
-    }
+
 
 }

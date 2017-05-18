@@ -28,7 +28,7 @@
             android:label="Login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ProMenuActivity"
+            android:name=".ProUsersClasses.ProMenuActivity"
             android:label="Welcome in PRO version"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -78,6 +78,18 @@
         <activity
             android:name=".ExamplesActivities.ResultExample1Activity"
             android:label="@string/title_activity_example_lvl1"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ProUsersClasses.ShowManipulatorsActivity"
+            android:label="@string/title_show_manipulators_activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ProUsersClasses.AddNewManipulatorActivity"
+            android:label="@string/add_new_manipulator_activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ProUsersClasses.ResultActivity"
+            android:label="@string/result_activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ProUsersClasses.ManipulatorDetailsActivity"
+            android:label="@string/manipulator_details_activity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

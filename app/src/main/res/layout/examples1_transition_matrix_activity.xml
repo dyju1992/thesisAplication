@@ -27,7 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:id="@+id/firstEditValue"
-        android:hint="sin(alpha1(t))*cos(theta2(t))"/>
+        android:hint="sin(alpha1(t))*cos(theta2(t))"
+        android:maxLines="1"
+        android:inputType="text"
+        android:singleLine="true"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -41,7 +44,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
         android:id="@+id/secondEditValue"
-        android:hint="cos(alpha1(t))*l2"/>
+        android:hint="cos(alpha1(t))*l2"
+        android:singleLine="true"
+        android:maxLines="1"/>
 
     <Button
         android:layout_width="match_parent"

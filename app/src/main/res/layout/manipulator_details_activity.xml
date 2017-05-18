@@ -13,37 +13,63 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wyniki przykładu nr1:"
+        android:id="@+id/welcomeText"
         android:textSize="20dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/firstResultText"
+        android:id="@+id/thetaValues"
         android:layout_marginTop="40dp"
         android:textSize="15dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:id="@+id/firstResult"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:textSize="15dp"
-        android:id="@+id/secondResultText"/>
-    <EditText
+        android:id="@+id/alphaValues"
+        android:layout_marginTop="70dp"
+        android:textSize="15dp"/>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/aValues"
         android:layout_marginTop="100dp"
-        android:id="@+id/secondResult" />
+        android:textSize="15dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dValues"
+        android:layout_marginTop="130dp"
+        android:textSize="15dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rxValue"
+        android:layout_marginTop="160dp"
+        android:textSize="15dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ryValues"
+        android:layout_marginTop="190dp"
+        android:textSize="15dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rzValues"
+        android:layout_marginTop="220dp"
+        android:textSize="15dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sprawdź"
-        android:id="@+id/resulrCheckButton"
-        android:layout_marginTop="200dp"/>
+        android:text="Przejdź do listy moich manipulatorów"
+        android:id="@+id/backToManipulatorList"
+        android:layout_marginTop="300dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuń manipulator z listy"
+        android:id="@+id/deletemanipulator"
+        android:layout_marginTop="340dp"/>
 
 
 

@@ -1,26 +1,22 @@
 package com.example.dyju.thesisapplication;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.dyju.thesisapplication.ProUsersClasses.ProMenuActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
-import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
 import java.util.List;
 
 import DatabasePackage.DbHandler;
-import Services.ILoginActivityService;
-import Services.LoginActivityService;
 import UsersPackage.User;
 
 
@@ -33,14 +29,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
     @NotEmpty(message = "Please enter your password")
     EditText password;
-
-    LoginActivityService loginActivityService;
-//    private LoginActivityService loginActivityService;
-
-//    public LoginActivity(LoginActivityService loginActivityService) {
-//        this.loginActivityService = loginActivityService;
-//    }
-
 
     public void init(){
 
@@ -65,13 +53,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         init();
     }
 
-    public User showUser(String name){
-        DbHandler dbHandler = new DbHandler(this, null, null, 1);
-        return dbHandler.findUser(name);
-
-    }
-
-
     @Override
     public void onValidationSucceeded() {
         try{
@@ -86,7 +67,11 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                     Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                     startActivity(intent);
                 }
+    }
 
+    public User showUser(String name){
+        DbHandler dbHandler = new DbHandler(this, null, null, 1);
+        return dbHandler.findUser(name);
 
     }
 
@@ -116,16 +101,12 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         for (ValidationError error : errors) {
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);
-
-            // Display error messages ;)
             if (view instanceof EditText) {
                 ((EditText) view).setError(message);
             } else {
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
         }
-
-
     }
 
     public String getNameValue(){

@@ -83,9 +83,14 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
         return queryExecutor(query);
     }
 
-    public Boolean datasArentBeOnDb(String manipulatorName){
-        String query = "SELECT * FROM "+ DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + manipulatorName + "\"";
+    public Boolean datasArentBeOnDb(String manipulatorName, String userId){
+        String query = "SELECT * FROM "+ DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + manipulatorName + "\"" + " AND " + USER_ID + " = \"" + userId + "\"";
         return !(queryExecutor(query).size() >0);
+    }
+
+    public void deleteManipulatorFromDb(String manipulatorName, String userId){
+        String query = "DELETE FROM " + DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + manipulatorName + "\"" + " AND " + USER_ID + " = \"" + userId + "\"";
+        queryExecutor(query);
     }
 
     public void deleteRowByName(String name){
@@ -150,6 +155,14 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
                 dhDatas.setA("0,l1,l2,0,l4");
                 dhDatas.setD("0,0,0,d4(t),0");
                 dhDatas.setTheta("theta1(t),theta2(t),theta3(t),180,theta5(t)");
+                dhDatas.setManipulatorName(name);
+                break;
+
+            case "Manipulator_1":
+                dhDatas.setAlpha("90,90,90");
+                dhDatas.setTheta("theta1(t),theta2(t),0");
+                dhDatas.setA("0,0,l3");
+                dhDatas.setD("0,lambda2,lambda3(t)");
                 dhDatas.setManipulatorName(name);
                 break;
 

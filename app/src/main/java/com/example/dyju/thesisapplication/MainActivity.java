@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
-        showPrzemekUser = (Button)findViewById(R.id.showPrzemek);
-        showPrzemekUser.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                ArrayList<User> userArrayList = showAllUser();
-            }
-        });
+//        showPrzemekUser = (Button)findViewById(R.id.showPrzemek);
+//        showPrzemekUser.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                ArrayList<User> userArrayList = showAllUser();
+//            }
+//        });
     }
 
     @Override

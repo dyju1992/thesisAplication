@@ -12,6 +12,10 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_example_lvl1">ExampleLvl1Activity</string>
+    <string name="title_show_manipulators_activity">ShowManipulatorActivity</string>
+    <string name="add_new_manipulator_activity">AddNewManipulatorActivity</string>
+    <string name="result_activity">ResultActivity</string>
+    <string name="manipulator_details_activity">ManipulatorDetailsActivity</string>
 
 
 </resources>

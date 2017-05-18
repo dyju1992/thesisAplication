@@ -11,10 +11,7 @@ import com.example.dyju.thesisapplication.DHForUserDto;
 import com.example.dyju.thesisapplication.DhDatas;
 import com.example.dyju.thesisapplication.ExamplesFacade;
 import com.example.dyju.thesisapplication.IExamplesFacade;
-import com.example.dyju.thesisapplication.LearningActivities.ExampleLvl1BarsActivities.TransitionMatrixAllLvl1Activity;
 import com.example.dyju.thesisapplication.R;
-
-import java.util.ArrayList;
 
 import DatabasePackage.DbHandlerMatrix;
 import UsersPackage.User;
@@ -34,10 +31,6 @@ public class ExamplesDhActivity extends AppCompatActivity {
     public ExamplesDhActivity() {
         facade = new ExamplesFacade();
     }
-
-    //    public ExamplesDhActivity(ExamplesFacade facade) {
-//        this.facade = facade;
-//    }
 
     protected void onCreate(Bundle savedInstancedSave){
         super.onCreate(savedInstancedSave);
@@ -66,57 +59,35 @@ public class ExamplesDhActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DhDatas dhDatas = new DhDatas(String.valueOf(alpha.getText()), String.valueOf(theta.getText()), String.valueOf(d.getText()), String.valueOf(a.getText()), String.valueOf(nameOfmanipulator.getText()));
                 if(facade.dhDatasAreEntered(dhDatas) && user != null){
-                    DHForUserDto enteredDatas = new DHForUserDto(user.getID(), dhDatas);
-                    DHForUserDto manipDatasFromDb = getFirstmanipulatorDatas(dhDatas.getManipulatorName());
-                    if(datasAreEnteredCorrectly(enteredDatas, manipDatasFromDb)){
+                    DhDatas manipDatasFromDb = getManipulatorDatas(dhDatas.getManipulatorName()).getDhDatas();
+                    if(datasAreEnteredCorrectly(dhDatas, manipDatasFromDb)){
                         Intent intent = new Intent(ExamplesDhActivity.this, ExamplesTransitionMatrixActivity.class);
                         intent.putExtra("dhDatas", manipDatasFromDb);
                         startActivity(intent);
                     }
-
-
-
-//                    facade.enterDatasAreValid(dhDatas);
-//                    facade.addDhToDatabase(dhForUserDto);
-//                    addDatasToTable(dhForUserDto);
-//                    ArrayList<DHForUserDto> manipulatorDatasForUser = getManpulatorsDatasForUser(user);
-//                    System.out.println("adssasdde");
                 }
             }
         });
 
     }
 
-    private Boolean datasAreEnteredCorrectly(DHForUserDto enteredDatas, DHForUserDto manipDatasFromDb){
+    private Boolean datasAreEnteredCorrectly(DhDatas enteredDatas, DhDatas manipDatasFromDb){
 //        return enteredDatas.equals(manipDatasFromDb);
     return true;
     }
 
-    private DHForUserDto getFirstmanipulatorDatas(String name){
+    private DHForUserDto getManipulatorDatas(String name){
         DbHandlerMatrix dbHandlerMatrix = new DbHandlerMatrix(this);
         return facade.getDhDatasForManipulatorName(name, dbHandlerMatrix);
     }
 
-    public ArrayList<DHForUserDto> getManpulatorsDatasForUser(User user){
-        DbHandlerMatrix dbHandlerMatrix = new DbHandlerMatrix(this);
-        return facade.getManpulatorsDatasForUser(user, dbHandlerMatrix);
-    }
+//    public ArrayList<DHForUserDto> getManpulatorsDatasForUser(User user){
+//        DbHandlerMatrix dbHandlerMatrix = new DbHandlerMatrix(this);
+//        return facade.getManpulatorsDatasForUser(user, dbHandlerMatrix);
+//    }
 
     public void addDatasToTable(DHForUserDto dhForUserDto){
         DbHandlerMatrix dbHandlerMatrix = new DbHandlerMatrix(this);
         facade.addDhToDatabase(dhForUserDto, dbHandlerMatrix);
     }
-
-
-
-
-//    public void addMockDatasToDb(String manipulatorName, User user){
-//        if(!manipulatorName.isEmpty()){
-//            DbHandlerMatrix dbHandlerMatrix = new DbHandlerMatrix(this);
-//            facade.addMockDataToDb(manipulatorName, dbHandlerMatrix);
-//        }
-//    }
-
-
-
 }

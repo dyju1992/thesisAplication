@@ -1,7 +1,6 @@
 package com.example.dyju.thesisapplication;
 
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 /**
  * Created by dyju on 2017-04-04.[
@@ -55,51 +54,32 @@ public class TransitionMatrix {
         this.a = a;
     }
 
-    public Object[][] getTransitionMatrixForData(int i){
-        Object[][] transitionMatrix = new String[4][4];
-//        transitionMatrix[0][0] = theta.get(i) instanceof Double ? Math.cos((Double) theta.get(i)) : "cos("+ theta.get(i) +")";
-        transitionMatrix[0][0] = getCosinusFromValue(theta[i]);
-//        transitionMatrix[0][1] = theta.get(i) instanceof Double ? -Math.sin((Double) theta.get(i)) : "-sin("+theta.get(i)+")";
-        transitionMatrix[0][1] = getMinusSinusFromValue(theta[i]);
-//        transitionMatrix[0][2] = 0;
-        transitionMatrix[0][2] = 0;
-//        transitionMatrix[0][3] = alpha.get(0) instanceof Double ? -Math.sin((Double) alpha.get(i-1)) : "-sin("+alpha.get(i-1)+")";
-        transitionMatrix[0][3] = getMinusSinusFromValue(alpha[i-1]);
-//
-//        transitionMatrix[1][0] = "sin("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
-        transitionMatrix[1][0] = getVariablesToMatrix10(theta[i], alpha[i-1]);
-//        transitionMatrix[1][1] = "cos("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
-        transitionMatrix[1][1] = getVariablesToMatrix11(theta[i], alpha[i-1]);
-//        transitionMatrix[1][2] = "-sin("+alpha.get(i-1)+")";
-        transitionMatrix[1][2] = getVariablesToMatrix12(alpha[i-1]);
-//        transitionMatrix[1][3] = "-sin("+alpha.get(i-1)+")*"+d.get(i);
-        transitionMatrix[1][3] = getVariablesToMatrix13(alpha[i-1], d[i]);
-//
-//        transitionMatrix[2][0] = "sin("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
-        transitionMatrix[2][0] = getVariablesToMatrix20(theta[i], alpha[i-1]);
-//        transitionMatrix[2][1] = "cos("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
-        transitionMatrix[2][1] = getVariablesToMatrix21(theta[i], alpha[i-1]);
-//        transitionMatrix[2][2] = "cos("+alpha.get(i-1)+")";
-        transitionMatrix[2][2] = getCosinusFromValue(alpha[i-1]);
-//        transitionMatrix[2][3] = "cos("+alpha.get(i-1)+")*"+d.get(i);
-        transitionMatrix[2][3] = getVariablesToMatrix23(alpha[i-1], d[i]);
-//
-        transitionMatrix[3][0] = 0;
-        transitionMatrix[3][1] = 0;
-        transitionMatrix[3][2] = 0;
-        transitionMatrix[3][3] = 1;
-//
+    public String[][] getAMatrixForData(int i){
+        String[][] transitionMatrix = new String[4][4];
+
+        transitionMatrix[0][0] = String.valueOf(getCosinusFromValue(theta[i]));
+        transitionMatrix[0][1] = getVariableMinusSinCos(theta[i], alpha[i]);
+        transitionMatrix[0][2] = getSinThetaSinAlpha(theta[i], alpha[i]);
+        transitionMatrix[0][3] = getCosValMultDimension(theta[i], a[i]);
+
+        transitionMatrix[1][0] = String.valueOf(getSinusFromValue(theta[i]));
+        transitionMatrix[1][1] = getCosThetaCosAlpha(theta[i], alpha[i]);
+        transitionMatrix[1][2] = getVariableMinusCosThetaSinAlpha(theta[i], alpha[i]);
+        transitionMatrix[1][3] = getSinValMultDimension(theta[i], a[i]);
+
+        transitionMatrix[2][0] = String.valueOf(0);
+        transitionMatrix[2][1] = String.valueOf(getSinusFromValue(alpha[i]));
+        transitionMatrix[2][2] = String.valueOf(getCosinusFromValue(alpha[i]));
+        transitionMatrix[2][3] = d[i];
+
+        transitionMatrix[3][0] = String.valueOf(0);
+        transitionMatrix[3][1] = String.valueOf(0);
+        transitionMatrix[3][2] = String.valueOf(0);
+        transitionMatrix[3][3] = String.valueOf(1);
         return transitionMatrix;
-//
-//
-//
     }
 
     public String[][] getTransitionMatrixForData1(int i){
-        if(i == 0){
-            return getTransitionMatrixFor0Index();
-            }
-
         String[][] transitionMatrix = new String[4][4];
 
 //        transitionMatrix[0][0] = theta.get(i) instanceof Double ? Math.cos((Double) theta.get(i)) : "cos("+ theta.get(i) +")";
@@ -114,20 +94,20 @@ public class TransitionMatrix {
 //        transitionMatrix[1][0] = "sin("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
         transitionMatrix[1][0] = getVariablesToMatrix10(theta[i], alpha[i-1]);
 //        transitionMatrix[1][1] = "cos("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
-        transitionMatrix[1][1] = getVariablesToMatrix11(theta[i], alpha[i-1]);
+        transitionMatrix[1][1] = getCosThetaCosAlpha(theta[i], alpha[i-1]);
 //        transitionMatrix[1][2] = "-sin("+alpha.get(i-1)+")";
         transitionMatrix[1][2] = String.valueOf(getMinusSinusFromValue(alpha[i-1]));
 //        transitionMatrix[1][3] = "-sin("+alpha.get(i-1)+")*"+d.get(i);
         transitionMatrix[1][3] = getVariablesToMatrix13(alpha[i-1], d[i]);
 //
 //        transitionMatrix[2][0] = "sin("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
-        transitionMatrix[2][0] = getVariablesToMatrix20(theta[i], alpha[i-1]);
+        transitionMatrix[2][0] = getSinThetaSinAlpha(theta[i], alpha[i-1]);
 //        transitionMatrix[2][1] = "cos("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
         transitionMatrix[2][1] = getVariablesToMatrix21(theta[i], alpha[i-1]);
 //        transitionMatrix[2][2] = "cos("+alpha.get(i-1)+")";
         transitionMatrix[2][2] = String.valueOf(getCosinusFromValue(alpha[i-1]));
 //        transitionMatrix[2][3] = "cos("+alpha.get(i-1)+")*"+d.get(i);
-        transitionMatrix[2][3] = getVariablesToMatrix23(alpha[i-1], d[i]);
+        transitionMatrix[2][3] = getCosValMultDimension(alpha[i-1], d[i]);
 //
         transitionMatrix[3][0] = String.valueOf(0);
         transitionMatrix[3][1] = String.valueOf(0);
@@ -140,43 +120,43 @@ public class TransitionMatrix {
 //
     }
 
-    protected String[][] getTransitionMatrixFor0Index(){
-        String[][] transitionMatrix = new String[4][4];
-
-//        transitionMatrix[0][0] = theta.get(i) instanceof Double ? Math.cos((Double) theta.get(i)) : "cos("+ theta.get(i) +")";
-        transitionMatrix[0][0] = String.valueOf(getCosinusFromValue(theta[0]));
-//        transitionMatrix[0][1] = theta.get(i) instanceof Double ? -Math.sin((Double) theta.get(i)) : "-sin("+theta.get(i)+")";
-        transitionMatrix[0][1] = String.valueOf(getMinusSinusFromValue(theta[0]));
-//        transitionMatrix[0][2] = 0;
-        transitionMatrix[0][2] = String.valueOf(0);
-//        transitionMatrix[0][3] = alpha.get(0) instanceof Double ? -Math.sin((Double) alpha.get(i-1)) : "-sin("+alpha.get(i-1)+")";
-        transitionMatrix[0][3] = String.valueOf(0);
+//    protected String[][] getTransitionMatrixFor0Index(){
+//        String[][] transitionMatrix = new String[4][4];
 //
-//        transitionMatrix[1][0] = "sin("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
-        transitionMatrix[1][0] = getVariablesToMatrix10(theta[0], "0");
-//        transitionMatrix[1][1] = "cos("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
-        transitionMatrix[1][1] = getVariablesToMatrix11(theta[0], "0");
-//        transitionMatrix[1][2] = "-sin("+alpha.get(i-1)+")";
-        transitionMatrix[1][2] = String.valueOf(getMinusSinusFromValue("0"));
-//        transitionMatrix[1][3] = "-sin("+alpha.get(i-1)+")*"+d.get(i);
-        transitionMatrix[1][3] = getVariablesToMatrix13("0", d[0]);
+////        transitionMatrix[0][0] = theta.get(i) instanceof Double ? Math.cos((Double) theta.get(i)) : "cos("+ theta.get(i) +")";
+//        transitionMatrix[0][0] = String.valueOf(getCosinusFromValue(theta[0]));
+////        transitionMatrix[0][1] = theta.get(i) instanceof Double ? -Math.sin((Double) theta.get(i)) : "-sin("+theta.get(i)+")";
+//        transitionMatrix[0][1] = String.valueOf(getMinusSinusFromValue(theta[0]));
+////        transitionMatrix[0][2] = 0;
+//        transitionMatrix[0][2] = String.valueOf(0);
+////        transitionMatrix[0][3] = alpha.get(0) instanceof Double ? -Math.sin((Double) alpha.get(i-1)) : "-sin("+alpha.get(i-1)+")";
+//        transitionMatrix[0][3] = String.valueOf(0);
+////
+////        transitionMatrix[1][0] = "sin("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
+//        transitionMatrix[1][0] = getVariablesToMatrix10(theta[0], "0");
+////        transitionMatrix[1][1] = "cos("+theta.get(i)+")*cos("+alpha.get(i-1)+")";
+//        transitionMatrix[1][1] = getCosThetaCosAlpha(theta[0], "0");
+////        transitionMatrix[1][2] = "-sin("+alpha.get(i-1)+")";
+//        transitionMatrix[1][2] = String.valueOf(getMinusSinusFromValue("0"));
+////        transitionMatrix[1][3] = "-sin("+alpha.get(i-1)+")*"+d.get(i);
+//        transitionMatrix[1][3] = getVariablesToMatrix13("0", d[0]);
+////
+////        transitionMatrix[2][0] = "sin("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
+//        transitionMatrix[2][0] = getSinThetaSinAlpha(theta[0], "0");
+////        transitionMatrix[2][1] = "cos("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
+//        transitionMatrix[2][1] = getVariablesToMatrix21(theta[0], "0");
+////        transitionMatrix[2][2] = "cos("+alpha.get(i-1)+")";
+//        transitionMatrix[2][2] = String.valueOf(getCosinusFromValue("0"));
+////        transitionMatrix[2][3] = "cos("+alpha.get(i-1)+")*"+d.get(i);
+//        transitionMatrix[2][3] = getCosValMultDimension("0", d[0]);
+////
+//        transitionMatrix[3][0] = String.valueOf(0);
+//        transitionMatrix[3][1] = String.valueOf(0);
+//        transitionMatrix[3][2] = String.valueOf(0);
+//        transitionMatrix[3][3] = String.valueOf(1);
 //
-//        transitionMatrix[2][0] = "sin("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
-        transitionMatrix[2][0] = getVariablesToMatrix20(theta[0], "0");
-//        transitionMatrix[2][1] = "cos("+theta.get(i)+")*sin("+alpha.get(i-1)+")";
-        transitionMatrix[2][1] = getVariablesToMatrix21(theta[0], "0");
-//        transitionMatrix[2][2] = "cos("+alpha.get(i-1)+")";
-        transitionMatrix[2][2] = String.valueOf(getCosinusFromValue("0"));
-//        transitionMatrix[2][3] = "cos("+alpha.get(i-1)+")*"+d.get(i);
-        transitionMatrix[2][3] = getVariablesToMatrix23("0", d[0]);
-//
-        transitionMatrix[3][0] = String.valueOf(0);
-        transitionMatrix[3][1] = String.valueOf(0);
-        transitionMatrix[3][2] = String.valueOf(0);
-        transitionMatrix[3][3] = String.valueOf(1);
-
-        return transitionMatrix;
-    }
+//        return transitionMatrix;
+//    }
 
     public String getAngleInRadius(String angle){
         try{
@@ -204,6 +184,20 @@ public class TransitionMatrix {
     }
 
 
+    public String getVariableMinusSinCos(String theta, String alpha){
+        Object minSinTheta = getMinusSinusFromValue(theta);
+        Object cosAlpha = getCosinusFromValue(alpha);
+        String value = getMultipleValues(minSinTheta, cosAlpha);
+        return checkingValue(value);
+    }
+
+    protected String getVariableMinusCosThetaSinAlpha(String theta, String alpha){
+        Object minCosTheta = getMinusCosinusFromValue(theta);
+        Object sinAlpha = getSinusFromValue(alpha);
+        String value = getMultipleValues(minCosTheta, sinAlpha);
+        return checkingValue(value);
+    }
+
     public String getVariablesToMatrix10(String theta, String alpha){
         Object sinTheta = getSinusFromValue(theta);
         Object cosAlpha = getCosinusFromValue(alpha);
@@ -211,7 +205,7 @@ public class TransitionMatrix {
         return checkingValue(value);
     }
 
-    public String getVariablesToMatrix11(String theta, String alpha){
+    public String getCosThetaCosAlpha(String theta, String alpha){
         Object cosTheta = getCosinusFromValue(theta);
         Object cosAlpha = getCosinusFromValue(alpha);
         String value = getMultipleValues(cosTheta, cosAlpha);
@@ -234,7 +228,7 @@ public class TransitionMatrix {
         return checkingValue(result);
     }
 
-    protected String getVariablesToMatrix20(String theta, String alpha){
+    protected String getSinThetaSinAlpha(String theta, String alpha){
         Object sinTheta = getSinusFromValue(theta);
         Object sinAlpha = getSinusFromValue(alpha);
         String value = getMultipleValues(sinTheta, sinAlpha);
@@ -248,15 +242,26 @@ public class TransitionMatrix {
         return checkingValue(value);
     }
 
-    public String getVariablesToMatrix23(String alpha, String d){
+    public String getCosValMultDimension(String alpha, String d){
         Object cosAlpha = getCosinusFromValue(alpha);
         Object dimension = String.valueOf(getDimension(d)).equals("0")? "0.0" : getDimension(d);
         String result = getMultipleValues(cosAlpha, dimension);
         return checkingValue(result);
     }
 
+    public String getSinValMultDimension(String alpha, String d){
+        Object sinAlpha = getSinusFromValue(alpha);
+        Object dimension = String.valueOf(getDimension(d)).equals("0")? "0.0" : getDimension(d);
+        String result = getMultipleValues(sinAlpha, dimension);
+        return checkingValue(result);
+    }
+
     public Object getCosinusFromValue(String value){
         return value.contains("(t)")? "cos("+value+")" : round(Math.cos(Double.parseDouble(getAngleInRadius(value))), 2);
+    }
+
+    public Object getMinusCosinusFromValue(String value){
+        return value.contains("(t)") ? "-cos("+value+")" : round(-Math.cos(Double.parseDouble(getAngleInRadius(value))), 2);
     }
 
     public Object getMinusSinusFromValue(String value){

@@ -9,8 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dyju.thesisapplication.CalculationService;
 import com.example.dyju.thesisapplication.DHForUserDto;
 import com.example.dyju.thesisapplication.DhDatas;
+import com.example.dyju.thesisapplication.ICalculationService;
 import com.example.dyju.thesisapplication.MultipleTransitionMatrix;
 import com.example.dyju.thesisapplication.MultipleTransitionMatrixDto;
 import com.example.dyju.thesisapplication.R;
@@ -28,6 +30,11 @@ import UsersPackage.User;
 
 public class ExamplesTransitionMatrixActivity extends AppCompatActivity implements Validator.ValidationListener{
 
+    ICalculationService calculationService;
+
+    public ExamplesTransitionMatrixActivity() {
+        this.calculationService = new CalculationService();
+    }
 
     Validator validator;
     Button ex1Button;
@@ -37,29 +44,31 @@ public class ExamplesTransitionMatrixActivity extends AppCompatActivity implemen
     EditText editText2;
     TextView textView1;
     TextView textView2;
-
-    String[][] matrix;
-
-    int rowValue1 = getRandomValue();
-    int rowValue2 = getRandomValue();
-    int columnValue1 = getRandomValue();
-    int columnvalue2 = getRandomValue();
+    DhDatas dhDatas;
 
 
-    public void init(DHForUserDto dhForUserDto){
+    protected void onCreate(Bundle savedInstancedSave){
+        super.onCreate(savedInstancedSave);
+        setContentView(R.layout.examples1_transition_matrix_activity);
+        dhDatas = (DhDatas) getIntent().getSerializableExtra("dhDatas");
+        addDataToTextView();
+        init();
+    }
+
+    public void init(){
         editText1 = (EditText)findViewById(R.id.firstEditValue);
         editText2 = (EditText)findViewById(R.id.secondEditValue);
-        TransitionMatrix transitionMatrix = getTransitionMatrix(dhForUserDto);
-        ArrayList<String[][]> transitionmatrixList = new ArrayList<>();
-        for(int i =2; i<transitionMatrix.getA().length; i++){
-            transitionmatrixList.add(transitionMatrix.getTransitionMatrixForData1(i));
-        }
-        MultipleTransitionMatrix multipleTransitionMatrix = new MultipleTransitionMatrix(transitionMatrix.getTransitionMatrixForData1(1));
+//        TransitionMatrix transitionMatrix = getTransitionMatrix(dhForUserDto);
+//        ArrayList<String[][]> transitionmatrixList = new ArrayList<>();
+//        for(int i =2; i<transitionMatrix.getA().length; i++){
+//            transitionmatrixList.add(transitionMatrix.getTransitionMatrixForData1(i));
+//        }
+//        MultipleTransitionMatrix multipleTransitionMatrix = new MultipleTransitionMatrix(transitionMatrix.getTransitionMatrixForData1(1));
 //        for (String[][] transMatrix : transitionmatrixList){
 //            multipleTransitionMatrix = multipleTransitionMatrix.multiplesMatrix(transMatrix);
 //        }
-        multipleTransitionMatrix = multipleTransitionMatrix.multiplesMatrix(transitionmatrixList.get(0));
-        matrix = multipleTransitionMatrix.getFirstMatrix();
+//        multipleTransitionMatrix = multipleTransitionMatrix.multiplesMatrix(transitionmatrixList.get(0));
+//        matrix = multipleTransitionMatrix.getFirstMatrix();
 
         ex1Button = (Button) findViewById(R.id.nextButton);
         validator = new Validator(this);
@@ -74,54 +83,78 @@ public class ExamplesTransitionMatrixActivity extends AppCompatActivity implemen
 
     }
 
-
-
-    protected void onCreate(Bundle savedInstancedSave){
-        super.onCreate(savedInstancedSave);
-        setContentView(R.layout.examples1_transition_matrix_activity);
-        DHForUserDto dhForUserDto = (DHForUserDto) getIntent().getSerializableExtra("dhDatas");
-        addDataToTextView();
-        init(dhForUserDto);
-    }
-
     private void addDataToTextView(){
         textView1 = (TextView) findViewById(R.id.firstTextViewValue);
-        textView1.setText("Wprowadź wartość z wiersza: " + String.valueOf(rowValue1) + " i kolumny: " + String.valueOf(columnValue1));
+        textView1.setText("Wprowadź wartość z pierwszego wiersza wektora");
         textView2 = (TextView) findViewById(R.id.secondTextViewValue);
-        textView2.setText("Wprowadź wartość z wiersza: " + String.valueOf(rowValue2) + " i kolumny: " + String.valueOf(columnvalue2));
-
-    }
-
-    private int getRandomValue(){
-        int value = 1 + (int)(Math.random() * 4);
-        return value;
-    }
-
-    private TransitionMatrix getTransitionMatrix(DHForUserDto dhForUserDto){
-        DhDatas dhDatas = dhForUserDto.getDhDatas();
-        String[] theta = dhDatas.getTheta().split(",");
-        String[] alpha = dhDatas.getAlpha().split(",");
-        String[] d = dhDatas.getD().split(",");
-        String[] a = dhDatas.getA().split(",");
-
-        return new TransitionMatrix(theta, alpha, d, a);
+        textView2.setText("Wprowadź wartość z drugiego wiersza wektora");
     }
 
     @Override
     public void onValidationSucceeded() {
-        if(!matrix[rowValue1-1][columnValue1-1].equals(editText1.getText())){
+        String [] r30 = calculationService.getr30ForDhDatas(dhDatas);
+        if(!isValidRowInVector(r30[0], editText1.getText().toString())){
+            View view = (EditText) findViewById(R.id.firstEditValue);
+            String message = "Wprowadź ponownie wartość w pierwszym polu";
+            ((EditText) view).setError(message);
             Toast.makeText(this, "Wprowadź ponownie wartość w pierwszym polu", Toast.LENGTH_SHORT).show();
-
         }else {
-            if(!matrix[rowValue2-1][columnvalue2-1].equals(editText2.getText())){
+            if(!isValidRowInVector(r30[1], editText2.getText().toString())){
+                View view = (EditText) findViewById(R.id.secondEditValue);
+                String message = "Wprowadź ponownie wartość w pierwszym polu";
+                ((EditText) view).setError(message);
                 Toast.makeText(this, "Wprowadź ponownie wartość w drugim polu", Toast.LENGTH_SHORT).show();
             }else{
                 Intent intent = new Intent(ExamplesTransitionMatrixActivity.this, ResultExample1Activity.class);
-                intent.putExtra("matrix", matrix);
+                intent.putExtra("dhDatas", dhDatas);
                 startActivity(intent);
             }
         }
+    }
 
+    public Boolean isValidRowInVector(String calculatedValue, String writtenValue){
+        String[] splitedCalculatedValues = calculatedValue.split("\\*|\\+|\\-");
+        ArrayList<String> splitedValuesToCheck = getSplitedValues(splitedCalculatedValues);
+        for(String value : splitedValuesToCheck){
+            if(!writtenValue.contains(value)){
+                return false;
+            }else{
+                writtenValue = writtenValue.substring(0, writtenValue.indexOf(value))+writtenValue.substring(writtenValue.indexOf(value)+value.length(),writtenValue.length());
+            }
+        }
+        return true;
+    }
+
+    public ArrayList<String> getSplitedValues(String[] values){
+        ArrayList<String> valuesToCheck = new ArrayList<>();
+        for(int i = 0; i<values.length; i++){
+            if(!values[i].equals("") && !values[i].isEmpty() && !values[i].equals("1.0")){
+                String value = getValueToCheck(values[i]);
+                valuesToCheck.add(value);
+            }
+        }
+
+        return valuesToCheck;
+
+    }
+
+    public String getValueToCheck(String value){
+        int openedBrackets = 0;
+        int endsBrackets = 0;
+        char[] val = value.toCharArray();
+        for (int i = 0; i<val.length; i++){
+            if(val[i] == ')'){
+                endsBrackets++;
+            }else if(val[i] == '('){
+                openedBrackets++;
+            }
+        }
+        if(openedBrackets>endsBrackets){
+            value = value.substring(1, value.length());
+        }else if(openedBrackets<endsBrackets){
+            value = value.substring(0, value.length()-1);
+        }
+        return value;
     }
 
     @Override

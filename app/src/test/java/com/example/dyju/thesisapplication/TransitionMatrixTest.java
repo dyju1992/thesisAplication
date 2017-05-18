@@ -2,19 +2,7 @@ package com.example.dyju.thesisapplication;
 
 import org.junit.Test;
 
-import java.math.BigInteger;
-import java.text.DecimalFormat;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
 
 import static org.junit.Assert.*;
 
@@ -53,10 +41,10 @@ public class TransitionMatrixTest extends TransitionMatrix {
         a[3] = "10";
 
         TransitionMatrix transitionMatrix = new TransitionMatrix(theta, alpha, d, a);
-        String[][] transitionMatrix0 = transitionMatrix.getTransitionMatrixForData1(0);
-        String[][] transitionMatrix01 = transitionMatrix.getTransitionMatrixForData1(1);
-        String[][] transitionMatrix12 = transitionMatrix.getTransitionMatrixForData1(2);
-        String[][] transitionMatrix23 = transitionMatrix.getTransitionMatrixForData1(3);
+        String[][] transitionMatrix0 = transitionMatrix.getAMatrixForData(0);
+        String[][] transitionMatrix01 = transitionMatrix.getAMatrixForData(1);
+        String[][] transitionMatrix12 = transitionMatrix.getAMatrixForData(2);
+        String[][] transitionMatrix23 = transitionMatrix.getAMatrixForData(3);
 
         MultipleTransitionMatrix multipleTransitionMatrix = new MultipleTransitionMatrix(transitionMatrix0);
 //        String [][] multMatr1 = multipleTransitionMatrix.multiplesMatrix(transitionMatrix01);
@@ -134,10 +122,10 @@ public class TransitionMatrixTest extends TransitionMatrix {
         String alpha3 = "alpha(t)";
 
         TransitionMatrix transitionMatrix = new TransitionMatrix();
-        String t = transitionMatrix.getVariablesToMatrix11(theta, alpha);
-        String t1 = transitionMatrix.getVariablesToMatrix11(theta1, alpha1);
-        String t2 = transitionMatrix.getVariablesToMatrix11(theta2, alpha2);
-        String t3 = transitionMatrix.getVariablesToMatrix11(theta3, alpha3);
+        String t = transitionMatrix.getCosThetaCosAlpha(theta, alpha);
+        String t1 = transitionMatrix.getCosThetaCosAlpha(theta1, alpha1);
+        String t2 = transitionMatrix.getCosThetaCosAlpha(theta2, alpha2);
+        String t3 = transitionMatrix.getCosThetaCosAlpha(theta3, alpha3);
         assertEquals("cos(theta(t))*cos(alpha(t))", t);
         assertEquals("0.5", t1);
         assertEquals("0", t2);
@@ -189,9 +177,9 @@ public class TransitionMatrixTest extends TransitionMatrix {
         String theta2 = "theta(t)";
         String alpha2 = "alpha(t)";
         TransitionMatrix transitionMatrix = new TransitionMatrix();
-        String d = transitionMatrix.getVariablesToMatrix20(theta, alpha);
-        String d2 = transitionMatrix.getVariablesToMatrix20(theta1, alpha1);
-        assertEquals("sin(theta(t))*sin(alpha(t))", transitionMatrix.getVariablesToMatrix20(theta2, alpha2));
+        String d = transitionMatrix.getSinThetaSinAlpha(theta, alpha);
+        String d2 = transitionMatrix.getSinThetaSinAlpha(theta1, alpha1);
+        assertEquals("sin(theta(t))*sin(alpha(t))", transitionMatrix.getSinThetaSinAlpha(theta2, alpha2));
         assertEquals("0.5", d);
         assertEquals("0", d2);
 

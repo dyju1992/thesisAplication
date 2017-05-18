@@ -14,37 +14,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/welcomeText" />
 
-    <!--<EditText-->
-        <!--android:id="@+id/nameInput"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="imie"-->
-        <!--android:layout_marginTop="50dp"/>-->
-
-
-    <!--<EditText-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/passwordInput"-->
-        <!--android:layout_marginTop="100dp"-->
-        <!--android:hint="haslo"-->
-        <!--android:inputType="textPassword"/>-->
-    <!--<Spinner-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/version_spinner"-->
-        <!--android:entries="@array/accountVersion"-->
-        <!--android:prompt="@string/version_select_title"-->
-        <!--android:layout_marginTop="150dp">-->
-
-    <!--</Spinner>-->
-
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/registerNewUser"-->
-        <!--android:text="Załóż konto"-->
-        <!--android:layout_marginTop="200dp"/>-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/showManipulators"
+        android:layout_marginTop="30dp"
+        android:text="Pokaż wcześnie wyliczone wartości"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addNewManipulator"
+        android:layout_marginTop="90dp"
+        android:text="Dodaj nowy manipulator"/>
 
 
 

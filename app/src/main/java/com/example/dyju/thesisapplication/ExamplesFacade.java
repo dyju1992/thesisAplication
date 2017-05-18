@@ -13,6 +13,7 @@ import UsersPackage.User;
  */
 public class ExamplesFacade extends AppCompatActivity implements IExamplesFacade {
 
+    final static String examplesUserId = "-1";
     public void addDhToDatabase(){
 
     }
@@ -35,7 +36,7 @@ public class ExamplesFacade extends AppCompatActivity implements IExamplesFacade
 
     @Override
     public void addMockDataToDb(String manipulatorName, DbHandlerMatrix dbHandlerMatrix) {
-            if(dbHandlerMatrix.datasArentBeOnDb(manipulatorName)){
+            if(dbHandlerMatrix.datasArentBeOnDb(manipulatorName, examplesUserId)){
                 dbHandlerMatrix.insertManipulatorMockDataToDb(manipulatorName);
             }
 

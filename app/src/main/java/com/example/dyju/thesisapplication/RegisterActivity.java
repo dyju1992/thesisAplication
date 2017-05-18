@@ -25,12 +25,13 @@ public class RegisterActivity extends AppCompatActivity implements Validator.Val
 
     Button registerNewUser;
 
-    @NotEmpty(message = "Please enter valid email")
+    @NotEmpty(message = "Proszę podać nazwę użytkowanika")
     EditText name;
 
-    @NotEmpty(message = "Please enter your password")
+    @NotEmpty(message = "Proszę podać hasło")
     EditText password;
 
+//    @NotEmpty(message = "Proszę wybrać rodzaj konta")
     Spinner accountVersion;
 
     Validator validator;

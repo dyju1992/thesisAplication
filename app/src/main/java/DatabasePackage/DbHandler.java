@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.security.PublicKey;
 import java.util.ArrayList;
 
-import Services.LoginActivityService;
 import UsersPackage.AccountVersion;
 import UsersPackage.User;
 
@@ -102,7 +101,7 @@ public class DbHandler extends SQLiteOpenHelper {
             user.setID(Integer.parseInt(cursor.getString(0)));
             user.set_name(cursor.getString(1));
             user.set_password(cursor.getString(2));
-            user.setAccountVersion(cursor.getString(3).toUpperCase()!="PRO"?AccountVersion.EDUCATION : AccountVersion.PRO);
+            user.setAccountVersion(cursor.getString(3).toUpperCase().equals("PRO")?AccountVersion.PRO : AccountVersion.EDUCATION);
             cursor.close();
         } else {
             user = null;
