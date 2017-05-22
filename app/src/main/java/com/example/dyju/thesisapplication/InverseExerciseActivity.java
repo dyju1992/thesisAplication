@@ -11,7 +11,7 @@ import com.example.dyju.thesisapplication.LearningActivities.AboutManipulatorBar
 import com.example.dyju.thesisapplication.LearningActivities.ExampleLvl1BarsActivities.ExampleLvl1Activity;
 import com.example.dyju.thesisapplication.LearningActivities.ForWhoLvl1Activity;
 
-public class LearningLvl1Activity extends AppCompatActivity {
+public class InverseExerciseActivity extends AppCompatActivity {
 
     Button exampleButton;
     Button aboutManipulatorButton;
@@ -29,7 +29,7 @@ public class LearningLvl1Activity extends AppCompatActivity {
         exampleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LearningLvl1Activity.this, ExampleLvl1Activity.class);
+                Intent intent = new Intent(InverseExerciseActivity.this, ExampleLvl1Activity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class LearningLvl1Activity extends AppCompatActivity {
         aboutManipulatorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LearningLvl1Activity.this, AboutManipulatorActivity.class);
+                Intent intent = new Intent(InverseExerciseActivity.this, AboutManipulatorActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class LearningLvl1Activity extends AppCompatActivity {
         aboutReverseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LearningLvl1Activity.this, AboutInverseActivity.class);
+                Intent intent = new Intent(InverseExerciseActivity.this, AboutInverseActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class LearningLvl1Activity extends AppCompatActivity {
         forWhoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LearningLvl1Activity.this, ForWhoLvl1Activity.class);
+                Intent intent = new Intent(InverseExerciseActivity.this, ForWhoLvl1Activity.class);
                 startActivity(intent);
 
             }

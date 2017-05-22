@@ -1,4 +1,4 @@
-package com.example.dyju.thesisapplication.LearningActivities.ExampleLvl1BarsActivities;
+package com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

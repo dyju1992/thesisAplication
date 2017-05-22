@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * Created by dyju on 2017-03-13.
  */
-public class LearningLvl2Activity extends AppCompatActivity {
+public class SimpleExerciseActivity extends AppCompatActivity {
 
     protected void init(){}
 

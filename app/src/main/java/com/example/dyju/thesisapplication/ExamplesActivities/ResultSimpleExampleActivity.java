@@ -1,6 +1,5 @@
 package com.example.dyju.thesisapplication.ExamplesActivities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,29 +8,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dyju.thesisapplication.DHForUserDto;
 import com.example.dyju.thesisapplication.DhDatas;
 import com.example.dyju.thesisapplication.IResultCalculationService;
-import com.example.dyju.thesisapplication.MultipleTransitionMatrix;
 import com.example.dyju.thesisapplication.R;
 import com.example.dyju.thesisapplication.ResultCalculationService;
 import com.example.dyju.thesisapplication.ResultValidationMessages;
-import com.example.dyju.thesisapplication.TransitionMatrix;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.regex.Pattern;
 
 
-public class ResultExample1Activity extends AppCompatActivity implements Validator.ValidationListener {
+public class ResultSimpleExampleActivity extends AppCompatActivity implements Validator.ValidationListener {
 
     Button checkResultButton;
     TextView firstVariable;
@@ -48,7 +39,7 @@ public class ResultExample1Activity extends AppCompatActivity implements Validat
     Validator validator;
     IResultCalculationService resultCalculationService;
 
-    public ResultExample1Activity() {
+    public ResultSimpleExampleActivity() {
         this.resultCalculationService = new ResultCalculationService();
     }
 
@@ -81,22 +72,18 @@ public class ResultExample1Activity extends AppCompatActivity implements Validat
         });
     }
 
-    public void setViewByIdsToObjects(){
-        firstVariable = (TextView)findViewById(R.id.firstVariable);
-        secondVariable = (TextView)findViewById(R.id.secondVariable);
-        firstResult = (EditText)findViewById(R.id.firstResult);
-        secondResult = (EditText)findViewById(R.id.secondResult);
-        thirdVariable = (TextView)findViewById(R.id.thirdVariable);
-        thirdResult = (EditText)findViewById(R.id.thirdResult);
-        checkResultButton = (Button)findViewById(R.id.resulrCheckButton);
-    }
-
     private void setTextInEditText(String manipulatorName){
         switch (manipulatorName){
             case "Manipulator_1":
                 firstVariable.setText("theta1(t):");
                 secondVariable.setText("theta2(t):");
                 thirdVariable.setText("lambda3:");
+                break;
+
+            case "Manipulator_2":
+                firstVariable.setText("theta1(t):");
+                secondVariable.setText("lambda2(t):");
+                thirdVariable.setText("theta3(t):");
         }
 
     }
