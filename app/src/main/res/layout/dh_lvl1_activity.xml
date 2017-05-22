@@ -13,7 +13,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Współrzędne Denavita Hartenberga" />
+        android:text="2. Uzupełnienie w tabeli Notację Denavita Hartenberga" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dh_przyklad"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jeżeli masz problem w zapisaniu notacji Denavita Hartenberga, pomocne mogą okazać się materiały poniżej:
+        \n\n- http://www.robotyka.p.lodz.pl/zsr_pliki_pomoce/notacja_DH_podstawy_robotyki"
+        android:layout_marginTop="300dp"/>
 
 
 

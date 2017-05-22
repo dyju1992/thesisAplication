@@ -12,31 +12,44 @@
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do czego są używane manipulatory?"/>
+        android:text="Dla kogo przeznaczona jest ta sekcja?"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="#0a1117"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Niemal wszystkie rodzaje działalności przemysłowej, wszedzie gdzie jest potrzeba przenoszenia przedmiotów na niewielkie odległości np:"/>
+        android:layout_marginTop="50dp"
+        android:text="Sekcja ta przeznaczona jest dla każdego, kto chce nauczyć się samodzielnie liczyć zadanie odwrotne kinematyki manipulatora trójczłonowego."/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="- Przemysł spożywczy (układanie różnych produktów, dodatkowo zastąpienie człowieka ma aspekt sanitarny)"/>
+        android:layout_marginTop="120dp"
+        android:text="Co trzeba umieć aby nauczyć się rozwiązywać zadanie odwrotne manipulatora trójczłonowego według zasad podanych w tej sekcji?"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="#0a1117"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="- Zakłady motoryzacyjne (przenoszenie części samochodów m.in. karoseria)"/>
+        android:layout_marginTop="240dp"
+        android:text="- Podstawowe wiadmości o wektorach, macierzach(mnożenie macieży i wektorów)"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:text="- Przemysł drzewny"/>
+        android:layout_marginTop="280dp"
+        android:text="- Rozwiązywać równania kwadratowe oraz znać różne przekształcenia trygonometryczne"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="210dp"
-        android:text="Ponadto manipulatory często są dodatkiem do różnych robotów i w takiej formie mają zastosowanie w takich dziedzinach jak medycyna czy przemysł wojskowy"/>
+        android:layout_marginTop="320dp"
+        android:text="- Określać notację Denavita Hartenberga dla manipulatora trójczłonowego"/>
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="210dp"-->
+        <!--android:text="- "/>-->
 
 </RelativeLayout>

@@ -30,6 +30,15 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     @NotEmpty(message = "Please enter your password")
     EditText password;
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.login_activity);
+        init();
+    }
+
     public void init(){
 
         loginButton = (Button)findViewById(R.id.loginUser);
@@ -45,25 +54,17 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         });
     }
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
-        init();
-    }
-
     @Override
     public void onValidationSucceeded() {
         try{
                     User user = showUser(getNameValue());
                     String pass = getPasswordFromTextEdit();
                     if(pass.equals(user.get_password())){
-                        Toast.makeText(this, "Your datas are valid", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Wprowadzone dane są prawidłowe", Toast.LENGTH_SHORT).show();
                         loginToValidVersionMenu(user);
                     }
                 }catch (NullPointerException e){
-                    Log.e("getUser", "user with this name is not registered");
+                    Log.e("getUser", "Użytkownik o takim loginie nie istnieje");
                     Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                     startActivity(intent);
                 }
@@ -77,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
     public void loginToValidVersionMenu(User user){
         switch (user.getAccountVersion().getName()){
-            case "Education":
+            case "Edukacyjne":
                 Intent intent = new Intent(LoginActivity.this, EducationMenuActivity.class);
                 intent.putExtra("user", user);
                 startActivity(intent);
@@ -89,14 +90,13 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 startActivity(intentPro);
                 break;
             default:
-                Toast.makeText(this, "Your account is invalid", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Twoje konto nie jest poprawne", Toast.LENGTH_LONG).show();
                 break;
         }
 
     }
 
 
-    @Override
     public void onValidationFailed(List<ValidationError> errors) {
         for (ValidationError error : errors) {
             View view = error.getView();

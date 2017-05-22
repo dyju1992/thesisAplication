@@ -10,6 +10,7 @@ import com.example.dyju.thesisapplication.R;
 public class ForWhoInverseExerciseActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inverse_exercise_for_who_activity);
     }

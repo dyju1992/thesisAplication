@@ -28,7 +28,7 @@ public class ExampleLvl1SectionPageAdapter extends FragmentPagerAdapter {
             case 4:
                 return new TransitionMatrixAllLvl1Activity();
             case 5:
-                return new EndTransitionMatrixLvl1Activity();
+                return new R30VectorCalculationActivity();
             case 6:
                 return new ExampleResultLvl1Activity();
         }

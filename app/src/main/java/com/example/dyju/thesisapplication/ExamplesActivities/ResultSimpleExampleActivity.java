@@ -59,7 +59,7 @@ public class ResultSimpleExampleActivity extends AppCompatActivity implements Va
         thirdVariable = (TextView)findViewById(R.id.thirdVariable);
         thirdResult = (EditText)findViewById(R.id.thirdResult);
         checkResultButton = (Button)findViewById(R.id.resulrCheckButton);
-        setTextInEditText(dhDatas.getManipulatorName());
+        setTextInEditText();
         validator = new Validator(this);
         validator.setValidationListener(this);
         checkResultButton.setOnClickListener(new View.OnClickListener(){
@@ -72,20 +72,10 @@ public class ResultSimpleExampleActivity extends AppCompatActivity implements Va
         });
     }
 
-    private void setTextInEditText(String manipulatorName){
-        switch (manipulatorName){
-            case "Manipulator_1":
-                firstVariable.setText("theta1(t):");
-                secondVariable.setText("theta2(t):");
-                thirdVariable.setText("lambda3:");
-                break;
-
-            case "Manipulator_2":
-                firstVariable.setText("theta1(t):");
-                secondVariable.setText("lambda2(t):");
-                thirdVariable.setText("theta3(t):");
-        }
-
+    private void setTextInEditText(){
+        firstVariable.setText("rx: ");
+        secondVariable.setText("ry: ");
+        thirdVariable.setText("rz: ");
     }
 
     @Override

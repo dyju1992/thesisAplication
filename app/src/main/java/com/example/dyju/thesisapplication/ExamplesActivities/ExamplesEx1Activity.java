@@ -20,18 +20,18 @@ public class ExamplesEx1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstancedSave){
         super.onCreate(savedInstancedSave);
         setContentView(R.layout.examples_ex1_activity);
-        User user = (User) getIntent().getSerializableExtra("user");
-        init(user);
+//        User user = (User) getIntent().getSerializableExtra("user");
+        init();
     }
 
-    public void init(final User user){
+    public void init(){
 
         toDhButton = (Button) findViewById(R.id.toDhButton);
         toDhButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(ExamplesEx1Activity.this, ExamplesDhActivity.class);
-                intent.putExtra("user", user);
+//                intent.putExtra("user", user);
                 intent.putExtra("exName", "Manipulator_1");
                 startActivity(intent);
             }

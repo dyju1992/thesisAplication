@@ -15,6 +15,22 @@
         android:layout_height="wrap_content"
         android:text="Uzupełnienie macierzy przejścia między poszczególnymi ogniwami" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/a1_przyklad"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/a2_przyklad"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/a3_przyklad"/>
 
 
 </RelativeLayout>

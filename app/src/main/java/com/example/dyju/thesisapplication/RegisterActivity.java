@@ -36,6 +36,13 @@ public class RegisterActivity extends AppCompatActivity implements Validator.Val
 
     Validator validator;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.register_activity);
+        init();
+    }
 
     public void init(){
         name = (EditText)findViewById(R.id.nameInput);
@@ -52,13 +59,6 @@ public class RegisterActivity extends AppCompatActivity implements Validator.Val
         });
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_activity);
-        init();
-    }
-
     public void addNewUser(String name, String password, AccountVersion accountVersion){
         DbHandler dbHandler = new DbHandler(this, null, null, 2);
         User user = new User(name, password, accountVersion);
@@ -71,13 +71,18 @@ public class RegisterActivity extends AppCompatActivity implements Validator.Val
         String userName = String.valueOf(name.getText());
         String userPassword = String.valueOf(password.getText());
         String version = String.valueOf(accountVersion.getSelectedItem());
-        AccountVersion accountVersion = AccountVersion.EDUCATION.getName().equals(version)? AccountVersion.EDUCATION : AccountVersion.PRO;
-        if(isNotUsedUserName(userName)) {
-            addNewUser(userName, userPassword, accountVersion);
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivity(intent);
+        if(AccountVersion.EDUCATION.getName().equals(version) || AccountVersion.PRO.getName().equals(version)) {
+            AccountVersion accountVersion = AccountVersion.EDUCATION.getName().equals(version) ? AccountVersion.EDUCATION : AccountVersion.PRO;
+            if (isNotUsedUserName(userName)) {
+                addNewUser(userName, userPassword, accountVersion);
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Konto z takim loginem zostało już założony", Toast.LENGTH_LONG).show();
+            }
         }else{
-            Toast.makeText(this, "Change your user name", Toast.LENGTH_LONG).show();
+            String message = "Proszę wybrać rodzaj konta";
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
     }
 

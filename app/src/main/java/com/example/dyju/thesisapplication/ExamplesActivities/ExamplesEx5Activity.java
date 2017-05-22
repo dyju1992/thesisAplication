@@ -15,7 +15,7 @@ public class ExamplesEx5Activity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstancedSave){
         super.onCreate(savedInstancedSave);
-        setContentView(R.layout.examples_ex4_activity);
+        setContentView(R.layout.examples_ex5_activity);
         init();
     }
 
@@ -25,7 +25,7 @@ public class ExamplesEx5Activity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(ExamplesEx5Activity.this, ExamplesDhActivity.class);
-                intent.putExtra("exName", "Manipulator_4");
+                intent.putExtra("exName", "Manipulator_5");
                 startActivity(intent);
             }
         });

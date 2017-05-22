@@ -7,7 +7,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dyju.thesisapplication.RegisterActivity">
+    tools:context="com.example.dyju.thesisapplication.RegisterActivity"
+    android:background="@drawable/tlo"
+    android:backgroundTint="#60FFFFFF"
+    android:backgroundTintMode="src_over">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,7 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/welcomeText"
-            android:textColor="#FF4081"
+            android:textColor="#0a1117"
+            android:textAlignment="center"
+            android:textStyle="bold"
             android:textSize="20dp"/>
 
     </LinearLayout>
@@ -27,26 +32,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="150dp">
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nauka poziom 1"
+        android:text="Zadanie proste kinematyki"
         android:textAlignment="center"
-        android:id="@+id/learningLevel1Button"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="150dp">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nauka poziom 2"
-            android:textAlignment="center"
-            android:id="@+id/learningLevel2Button"/>
+        android:id="@+id/simpleExercise"/>
     </LinearLayout>
 
     <LinearLayout
@@ -57,7 +49,32 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Przykłady"
+            android:text="Zadanie odwrotne kinematyki"
+            android:textAlignment="center"
+            android:id="@+id/inverseExercise"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Podstawowe informacje na temat manipulatorów"
+            android:textAlignment="center"
+            android:id="@+id/aboutManipulator"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="250dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Przykłady zadań"
             android:textAlignment="center"
             android:id="@+id/examplesButton"/>
     </LinearLayout>

@@ -8,36 +8,56 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.dyju.thesisapplication.ExamplesActivities.ExamplesActivity;
+import com.example.dyju.thesisapplication.LearningActivities.AboutManipulatorBars.AboutManipulatorActivity;
 
 import UsersPackage.User;
 
-/**
- * Created by dyju on 2017-02-23.
- */
+
 public class EducationMenuActivity extends AppCompatActivity {
 
     TextView welcomeText;
 
-    Button learningLvl1Btn;
+    Button simpleExerciseBtn;
 
-    Button learningLvl2Btn;
+    Button inverseExerciseBtn;
 
     Button examplesbtn;
 
+    Button aboutManipulatorButton;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.education_menu_activity);
+        User user = (User)getIntent().getSerializableExtra("user");
+        setPageByUserData(user);
+        init(user);
+    }
+
     public void init(final User user){
 
-        learningLvl1Btn.setOnClickListener(new View.OnClickListener() {
+        aboutManipulatorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EducationMenuActivity.this, LearningLvl1Activity.class);
+                Intent intent = new Intent(EducationMenuActivity.this, AboutManipulatorActivity.class);
                 startActivity(intent);
             }
         });
 
-        learningLvl2Btn.setOnClickListener(new View.OnClickListener() {
+        inverseExerciseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EducationMenuActivity.this, LearningLvl2Activity.class);
+                Intent intent = new Intent(EducationMenuActivity.this, InverseExerciseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        simpleExerciseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EducationMenuActivity.this, SimpleExerciseActivity.class);
                 startActivity(intent);
 
             }
@@ -53,21 +73,13 @@ public class EducationMenuActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.education_menu_activity);
-        User user = (User)getIntent().getSerializableExtra("user");
-        setPageByUserData(user);
-        init(user);
-    }
-
     private void setPageByUserData(User user) {
         welcomeText = (TextView)findViewById(R.id.welcomeText);
-        welcomeText.setText("Witaj " + user.get_name()+" na koncie Edukacyjnym. Wybierz co chcesz zrobić:");
-        learningLvl1Btn = (Button)findViewById(R.id.learningLevel1Button);
-        learningLvl2Btn = (Button)findViewById(R.id.learningLevel2Button);
+        welcomeText.setText("Witaj " + user.get_name()+" na swoim koncie Edukacyjnym.");
+        inverseExerciseBtn = (Button)findViewById(R.id.inverseExercise);
+        simpleExerciseBtn = (Button)findViewById(R.id.simpleExercise);
         examplesbtn = (Button)findViewById(R.id.examplesButton);
+        aboutManipulatorButton = (Button)findViewById(R.id.aboutManipulator);
 
 
 //        welcomeText.setTextColor(Color.parseColor("#FFFFFF"));

@@ -7,28 +7,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dyju.thesisapplication.MainActivity"
-    android:layout_centerHorizontal="true">
+    tools:context="com.example.dyju.thesisapplication.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Zadanie proste kienamtyki manipulatora nr. 3"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Rozpatrzymy teraz następujący manipulator. Przygotuj na kartce notacje DH dla tego manipulatora i gdy będziesz gotów nacisnij dalej.  " />
+        android:text="Rozpatrzymy teraz następujący manipulator. Przygotuj na kartce notacje DH dla tego manipulatora i gdy będziesz gotów nacisnij dalej.  "
+        android:textSize="17dp"
+        android:textAlignment="center"
+        android:textColor="#0A1117"
+        android:textStyle="bold"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/manipulator_ex3"/>
+        android:src="@drawable/manipulator_ex3"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="90dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toDhButton"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="400dp"
         android:text="Dalej"/>
 
 

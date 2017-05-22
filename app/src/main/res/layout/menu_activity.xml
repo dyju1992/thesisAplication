@@ -7,39 +7,31 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dyju.thesisapplication.MenuActivity">
+    tools:context="com.example.dyju.thesisapplication.MenuActivity"
+    android:background="@drawable/tlo"
+    android:backgroundTint="#60FFFFFF"
+    android:backgroundTintMode="src_over">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aby przejść dalej do aplikacji należy mieć założone konto użytkownika. Jeżeli takie posiadasz przejdź do logowania, jeżeli jeszcze nie posiadasz konta przejdź do rejestracji i za kilka chwil ciesz się z pełnego dostępu do aplikacji."/>
-
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Enter to the application"-->
-        <!--android:id="@+id/goTOApplication"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginBottom="70dp" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Add new user"-->
-        <!--android:id="@+id/addNewUser"/>-->
+        android:text="Aby przejść dalej do aplikacji należy mieć założone konto użytkownika. Jeżeli takie posiadasz przejdź do logowania, jeżeli jeszcze nie posiadasz konta przejdź do rejestracji i za kilka chwil ciesz się z pełnego dostępu do aplikacji."
+        android:textColor="#0a1117"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dodaj nowe konto użytkownika"
         android:id="@+id/registerButton"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="200dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zaloguj"
         android:id="@+id/loginUser1"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="300dp"/>
 </RelativeLayout>

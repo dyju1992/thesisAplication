@@ -16,7 +16,7 @@ public class ExamplesEx3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstancedSave){
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstancedSave);
-        setContentView(R.layout.examples_ex6_activity);
+        setContentView(R.layout.examples_ex3_activity);
         init();
     }
 
@@ -26,7 +26,7 @@ public class ExamplesEx3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(ExamplesEx3Activity.this, ExamplesDhActivity.class);
-                intent.putExtra("exName", "Manipulator_6");
+                intent.putExtra("exName", "Manipulator_3");
                 startActivity(intent);
             }
         });

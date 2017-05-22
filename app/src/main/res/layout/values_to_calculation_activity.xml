@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Poniżej znajdują się wszystkie wartości niezbędne do wylicznia tego zadania:"
+        android:layout_marginLeft="5dp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/valuesList"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="5dp">
+
+
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="5dp"
+        android:text="Gdy obliczysz już wartość poszczególnych zmiennych, przejdź dalej. W kolejnym kroku wprowadź jedną wybraną wartość dla każdej zmiennej w zaokrągleniu do dwóch miejsc po przecinku."/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Przejdź do rozwiązania"
+        android:id="@+id/goToExerciseResult"
+        android:layout_marginTop="300dp"/>
+
+</RelativeLayout>

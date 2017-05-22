@@ -5,7 +5,7 @@ package UsersPackage;
  */
 public enum AccountVersion {
 
-    EDUCATION("Education"),
+    EDUCATION("Edukacyjne"),
     PRO("PRO");
 
     private final String name;

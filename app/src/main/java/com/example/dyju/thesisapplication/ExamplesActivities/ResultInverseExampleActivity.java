@@ -93,6 +93,12 @@ public class ResultInverseExampleActivity extends AppCompatActivity implements V
                 firstVariable.setText("theta1(t):");
                 secondVariable.setText("lambda2(t):");
                 thirdVariable.setText("theta3(t):");
+                break;
+
+            default:
+                firstVariable.setText("rx:");
+                secondVariable.setText("ry:");
+                thirdVariable.setText("rz:");
         }
 
     }

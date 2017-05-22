@@ -13,5 +13,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Do czego są używane manipulatory?"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Niemal wszystkie rodzaje działalności przemysłowej, wszedzie gdzie jest potrzeba przenoszenia przedmiotów na niewielkie odległości np:"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="- Przemysł spożywczy (układanie różnych produktów, dodatkowo zastąpienie człowieka ma aspekt sanitarny)"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="- Zakłady motoryzacyjne (przenoszenie części samochodów m.in. karoseria)"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="- Przemysł drzewny"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
+        android:text="Ponadto manipulatory często są dodatkiem do różnych robotów i w takiej formie mają zastosowanie w takich dziedzinach jak medycyna czy przemysł wojskowy"/>
 
 </RelativeLayout>

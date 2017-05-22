@@ -2,4 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Niniejsza aplikacja, jest aplikacją mobilną stworzoną na system operacyjny android. Została ona zrealizowana na potrzeby pracy magisterskiej.
+        \n\nAby móc skorzystać z aplikacji należy założyć darmowe konto. Możliwe jest założenie konta edukacyjnego lub tzw. pro.
+        \n\nUżytkownik posiadający wersję edukacyjną może skorzystac z nauki wykonywania zadania prostego i odwrotnego kinematyki manipulatora trójczłonowego, po czym w sekcji 'przykłady' może sprawdzić czy w pelni opanował te informacje.
+        \n\nWersja pro natomiast umożliwia użytkownikowi wprowadzenia danych własnego manipulatora trójczłonowego a następnie wyliczenie jego zadania prostego. Tak wprowadzone dane manipulatora zostają zapisane i są dostepne dla użytkownika w sekcji 'Wcześniej wyliczone wartości'."
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:textSize="17dp"
+
+        />
+
 </RelativeLayout>

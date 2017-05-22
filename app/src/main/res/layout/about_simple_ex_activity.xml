@@ -6,9 +6,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zadanie odwrotne kinematyki manipulatora polega na wyznaczeniu możliwych zbiorów wartości przemieszczeń kątowych i liniowych, które pozwalają na osiągnięcie zadanej pozycji lub orientacji chwytaka.
-        \n\nJest to podstawowe zadanie programowania i sterowania ruchu manipulatora.
-        \n\nZadanie odwrotne jest trudniejsze do obliczenia ze względu na większą liczbę rozwiązań i ich nieliniowość"
+        android:text="Zadanie proste kinematyki manipulatora polega na wyznaczeniu pozycji i orientacji chwytaka względem układu odniesienia podstawy.
+        \n\nJest to podstawowe zadanie kinematyki manipulatora.
+        \n\nW odróżnieniu do zadania odwrotnego w zadaniu tym dane są współrzędne konfiguracyjne, natomiast szukane są współrzędne chwytaka."
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"

@@ -7,37 +7,38 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dyju.thesisapplication.MainActivity">
+    tools:context="com.example.dyju.thesisapplication.MainActivity"
+    android:background="@drawable/tlo"
+    android:backgroundTint="#60FFFFFF"
+    android:backgroundTintMode="src_over">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Witam w nauce zadania odwrotnego kinematyki manipulatorów - poziom podstawowy" />
+        android:text="Witam w sekcji poświęconej nauce obliczania zadania odwrotnego kinematyki manipulatora."
+        android:textAlignment="center"
+        android:textColor="#0a1117"
+        android:textStyle="bold"
+        android:textSize="17dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dla kogo jest ten poziom? "
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:id="@+id/forWho"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Manipulator - informacje podstawowe"
-        android:id="@+id/aboutManipulator"
-        android:layout_marginTop="100dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zadanie odwrotne kinematyki - informacje podstawowe"
         android:id="@+id/aboutReverse"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="120dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Przykład"
+        android:text="Jak obliczyć zadanie odwrotne kinematyki manipulatora?"
         android:id="@+id/example"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="180dp"/>
 
 </RelativeLayout>

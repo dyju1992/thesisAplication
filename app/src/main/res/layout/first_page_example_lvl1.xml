@@ -22,26 +22,26 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:text="2. Uzupełnienie w tabeli Notację Denavita Hartenberga"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         android:text="3. Uzupełnienie macierzy przejścia między poszczególnymi ogniwami"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="4. Wymnożenie wszystkich macierzy przejścia"/>
+        android:layout_marginTop="220dp"
+        android:text="4. Wyliczenie wektora położenia chwytaka względem początku układu"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:text="5. Znając pozycję i orientację końcówki manipulatora wyznaczyc poszczególne zmienne."/>
+        android:layout_marginTop="270dp"
+        android:text="5. Wyliczenie zmiennych."/>
 
 
 

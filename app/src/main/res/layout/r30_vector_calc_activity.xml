@@ -13,7 +13,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wymnożenie wszystkich macierzy przejścia" />
+        android:text="4. Wyliczenie wektora położenia chwytaka względem początku układu" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wektory przejścia odpowiednio z układów 3 do 3, układu 3 do 2 oraz układu 3 do 1:"
+        android:layout_marginTop="40dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/wektory"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wektor przejścia z układu 3 do 0."
+        android:layout_marginTop="200dp"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/r30_przyklad"/>
 
 
 

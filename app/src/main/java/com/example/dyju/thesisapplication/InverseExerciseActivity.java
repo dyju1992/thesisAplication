@@ -7,37 +7,35 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.dyju.thesisapplication.LearningActivities.AboutInverseActivity;
-import com.example.dyju.thesisapplication.LearningActivities.AboutManipulatorBars.AboutManipulatorActivity;
-import com.example.dyju.thesisapplication.LearningActivities.ExampleLvl1BarsActivities.ExampleLvl1Activity;
-import com.example.dyju.thesisapplication.LearningActivities.ForWhoLvl1Activity;
+import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.ExampleInverseActivity;
+import com.example.dyju.thesisapplication.LearningActivities.ForWhoInverseExerciseActivity;
 
 public class InverseExerciseActivity extends AppCompatActivity {
 
     Button exampleButton;
-    Button aboutManipulatorButton;
     Button aboutReverseButton;
     Button forWhoButton;
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.inverse_exercise_activity);
+        init();
+
+    }
+
     protected void init(){
 
         exampleButton = (Button)findViewById(R.id.example);
-        aboutManipulatorButton = (Button)findViewById(R.id.aboutManipulator);
         aboutReverseButton = (Button)findViewById(R.id.aboutReverse);
         forWhoButton = (Button)findViewById(R.id.forWho);
 
         exampleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InverseExerciseActivity.this, ExampleLvl1Activity.class);
-                startActivity(intent);
-            }
-        });
-
-        aboutManipulatorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(InverseExerciseActivity.this, AboutManipulatorActivity.class);
+                Intent intent = new Intent(InverseExerciseActivity.this, ExampleInverseActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,18 +51,10 @@ public class InverseExerciseActivity extends AppCompatActivity {
         forWhoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InverseExerciseActivity.this, ForWhoLvl1Activity.class);
+                Intent intent = new Intent(InverseExerciseActivity.this, ForWhoInverseExerciseActivity.class);
                 startActivity(intent);
 
             }
         });
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.learning_lvl1_activity);
-        init();
-
     }
 }

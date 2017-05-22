@@ -20,7 +20,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/manipulator_dwuczlonowy"
+        android:src="@drawable/manipulator_przyklad"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"/>
 
 

@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Sekcja ta przeznaczona jest dla każdego, kto chce nauczyć się samodzielnie liczyć zadanie odwrotne kinematyki manipulatora trójczłonowego."/>
+        android:text="Sekcja ta przeznaczona jest dla każdego, kto chce nauczyć się samodzielnie liczyć zadanie proste kinematyki manipulatora trójczłonowego."/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +41,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="270dp"
         android:text="- Rozwiązywać równania kwadratowe oraz znać różne przekształcenia trygonometryczne"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="- Określać notację Denavita Hartenberga dla manipulatora trójczłonowego"/>
     <!--<TextView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->

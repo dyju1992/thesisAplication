@@ -10,8 +10,14 @@
     tools:context="com.example.dyju.thesisapplication.MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Zadanie proste kienamtyki manipulatora nr. 1"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="Rozpatrzymy teraz następujący manipulator. Przygotuj na kartce notacje DH dla tego manipulatora i gdy będziesz gotów nacisnij dalej.  " />
 
     <Button

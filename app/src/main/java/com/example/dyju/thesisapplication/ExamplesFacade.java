@@ -46,7 +46,7 @@ public class ExamplesFacade extends AppCompatActivity implements IExamplesFacade
     public DHForUserDto getDhDatasForManipulatorName(String manipulatorName, DbHandlerMatrix dbHandlerMatrix){
             ArrayList<DHForUserDto> dhForUserDtoArrayList = new ArrayList<>();
         try{
-            dhForUserDtoArrayList = dbHandlerMatrix.getDhForManipulatorName(manipulatorName);
+            dhForUserDtoArrayList = dbHandlerMatrix.getDhForManipulatorName(manipulatorName, String.valueOf(-1));
             if(dhForUserDtoArrayList.size()==0){
                 dhForUserDtoArrayList = addMockDhAndSelect(manipulatorName, dbHandlerMatrix);
 
@@ -60,7 +60,7 @@ public class ExamplesFacade extends AppCompatActivity implements IExamplesFacade
 
     private ArrayList<DHForUserDto> addMockDhAndSelect(String name, DbHandlerMatrix dbHandlerMatrix){
         dbHandlerMatrix.insertManipulatorMockDataToDb(name);
-        return dbHandlerMatrix.getDhForManipulatorName(name);
+        return dbHandlerMatrix.getDhForManipulatorName(name, String.valueOf(-1));
 
     }
 }

@@ -9,9 +9,29 @@
     tools:context=".LearningActivities.AboutManipulatorBars.AboutManipulatorActivity$PlaceholderFragment">
 
     <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Co to jest manipulator?"/>
+        android:layout_marginLeft="10dp"
+        android:text="Definicja: "/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="italic"
+        android:text="''Manipulator jest to układ N ramion połączonych ze sobą przegubami, zakończony chwytakiem''"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="10dp"
+        android:text="Manipulator robotyczny jest to część robota pełniąca funkcję ludzkich kończyn górnych, wykonująca takie czynności jak przenoszenie, obracanie,  przesuwanie itp."/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="70dp"
+        android:src="@drawable/manipulator"/>
 
 </RelativeLayout>

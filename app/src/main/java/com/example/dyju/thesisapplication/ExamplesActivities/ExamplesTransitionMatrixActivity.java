@@ -93,23 +93,23 @@ public class ExamplesTransitionMatrixActivity extends AppCompatActivity implemen
     @Override
     public void onValidationSucceeded() {
         String [] r30 = calculationService.getr30ForDhDatas(dhDatas);
-        if(!isValidRowInVector(r30[0], editText1.getText().toString())){
-            View view = (EditText) findViewById(R.id.firstEditValue);
-            String message = "Wprowadź ponownie wartość w pierwszym polu";
-            ((EditText) view).setError(message);
-            Toast.makeText(this, "Wprowadź ponownie wartość w pierwszym polu", Toast.LENGTH_SHORT).show();
-        }else {
-            if(!isValidRowInVector(r30[1], editText2.getText().toString())){
-                View view = (EditText) findViewById(R.id.secondEditValue);
-                String message = "Wprowadź ponownie wartość w pierwszym polu";
-                ((EditText) view).setError(message);
-                Toast.makeText(this, "Wprowadź ponownie wartość w drugim polu", Toast.LENGTH_SHORT).show();
-            }else{
-                Intent intent = new Intent(ExamplesTransitionMatrixActivity.this, ResultExample1Activity.class);
+//        if(!isValidRowInVector(r30[0], editText1.getText().toString())){
+//            View view = (EditText) findViewById(R.id.firstEditValue);
+//            String message = "Wprowadź ponownie wartość w pierwszym polu";
+//            ((EditText) view).setError(message);
+//            Toast.makeText(this, "Wprowadź ponownie wartość w pierwszym polu", Toast.LENGTH_SHORT).show();
+//        }else {
+//            if(!isValidRowInVector(r30[1], editText2.getText().toString())){
+//                View view = (EditText) findViewById(R.id.secondEditValue);
+//                String message = "Wprowadź ponownie wartość w pierwszym polu";
+//                ((EditText) view).setError(message);
+//                Toast.makeText(this, "Wprowadź ponownie wartość w drugim polu", Toast.LENGTH_SHORT).show();
+//            }else{
+                Intent intent = new Intent(ExamplesTransitionMatrixActivity.this, ValuesToCalculationActivity.class);
                 intent.putExtra("dhDatas", dhDatas);
                 startActivity(intent);
-            }
-        }
+//            }
+//        }
     }
 
     public Boolean isValidRowInVector(String calculatedValue, String writtenValue){

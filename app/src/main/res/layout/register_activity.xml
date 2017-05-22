@@ -7,19 +7,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dyju.thesisapplication.RegisterActivity">
+    tools:context="com.example.dyju.thesisapplication.RegisterActivity"
+    android:background="@drawable/tlo"
+    android:backgroundTint="#60FFFFFF"
+    android:backgroundTintMode="src_over">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please set your name and password" />
+        android:text="Podaj swój login, hasło oraz wybież rodzaj konta"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#0a1117"/>
 
     <EditText
         android:id="@+id/nameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="imie"
-        android:layout_marginTop="50dp"/>
+        android:hint="Login"
+        android:textColorHint="#0a1117"
+        android:layout_marginTop="50dp"
+        android:textColor="#0a1117" />
 
 
     <EditText
@@ -27,7 +35,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/passwordInput"
         android:layout_marginTop="100dp"
-        android:hint="haslo"
+        android:hint="Hasło"
+        android:textColorHint="#0a1117"
         android:inputType="textPassword"/>
     <Spinner
         android:layout_width="match_parent"
@@ -38,7 +47,6 @@
         android:layout_marginTop="150dp">
 
     </Spinner>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

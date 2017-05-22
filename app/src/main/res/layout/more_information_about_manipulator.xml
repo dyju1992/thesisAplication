@@ -12,6 +12,36 @@
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Więcej informacji na temat manipulatorów można znaleźć pod poniższymi linkami:"/>
+        android:text="Więcej informacji na temat manipulatorów można znaleźć pod poniższymi linkami:" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wikipedia https://pl.wikipedia.org/wiki/Manipulator_robotyczny"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="asimo http://www.asimo.pl/teoria/manipulator.php"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:layout_marginTop="80dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="robotyka http://www.robotyka.com/teoria.php/teoria.10"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:layout_marginTop="120dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://ppietras.w.interiowo.pl/teoria/s2.html"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:layout_marginTop="160dp"/>
 
 </RelativeLayout>

@@ -18,69 +18,85 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".AboutApplicationActivity"
+            android:label="Kilka słów o aplikacji"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
-            android:label="Register new user"
+            android:label="Zarejestruj nowego użytkownika"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
-            android:label="Login"
+            android:label="Zaloguj użytkownika"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ProUsersClasses.ProMenuActivity"
-            android:label="Welcome in PRO version"
+            android:label="Wersja PRO"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EducationMenuActivity"
-            android:label="Welcome in Education version"
+            android:label="Wersja edukacyjna"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LearningLvl1Activity"
-            android:label="Learning level 1"
+            android:name=".InverseExerciseActivity"
+            android:label="@string/title_inverse_ex"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LearningLvl2Activity"
-            android:label="Learning level 2"
+            android:name=".SimpleExerciseActivity"
+            android:label="@string/title_simple_ex"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+        android:name=".SimpleExerciseLearning.ForWhoSimpleExercise"
+        android:label="@string/title_simple_ex"
+        android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SimpleExerciseLearning.AboutSimpleExerciseActivity"
+            android:label="@string/title_simple_ex"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ExamplesActivities.ExamplesActivity"
-            android:label="Examples"
+            android:label="Przykłady"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LearningActivities.AboutInverseActivity"
-            android:label="Examples"
+            android:label="@string/title_inverse_ex"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LearningActivities.ForWhoLvl1Activity"
-            android:label="Examples"
+            android:name=".LearningActivities.ForWhoInverseExerciseActivity"
+            android:label="@string/title_inverse_ex"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LearningActivities.AboutManipulatorBars.AboutManipulatorActivity"
             android:label="@string/title_activity_about_manipulator"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LearningActivities.ExampleLvl1BarsActivities.ExampleLvl1Activity"
-            android:label="@string/title_activity_example_lvl1"
+            android:name=".LearningActivities.InverseExampleBarsActivities.ExampleInverseActivity"
+            android:label="@string/title_activity_example_inverse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".ExamplesActivities.ExamplesDhActivity"
-            android:label="@string/title_activity_example_lvl1"
+            android:label="@string/title_activity_example_inverse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".ExamplesActivities.ExamplesEx1Activity"
-            android:label="@string/title_activity_example_lvl1"
+            android:label="@string/title_activity_example_inverse"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesActivities.ExamplesEx3Activity"
+            android:label="@string/title_activity_example_inverse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".ExamplesActivities.ExamplesTransitionMatrixActivity"
-            android:label="@string/title_activity_example_lvl1"
+            android:label="@string/title_activity_example_inverse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".ExamplesActivities.ResultExample1Activity"
-            android:label="@string/title_activity_example_lvl1"
+            android:name=".ExamplesActivities.ResultInverseExampleActivity"
+            android:label="@string/title_activity_example_inverse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ProUsersClasses.ShowManipulatorsActivity"
-            android:label="@string/title_show_manipulators_activity"
+            android:label="Twoje manipulatory"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ProUsersClasses.AddNewManipulatorActivity"
             android:label="@string/add_new_manipulator_activity"
@@ -90,6 +106,26 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ProUsersClasses.ManipulatorDetailsActivity"
             android:label="@string/manipulator_details_activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesActivities.ExamplesEx2Activity"
+            android:label="@string/title_activity_example_inverse"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesActivities.ValuesToCalculationActivity"
+            android:label="@string/title_activity_example_inverse"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesActivities.ExamplesEx4Activity"
+            android:label="@string/title_activity_example_simple"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesActivities.ExamplesEx5Activity"
+            android:label="@string/title_activity_example_simple"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ExamplesActivities.ExamplesEx6Activity"
+            android:label="@string/title_activity_example_simple"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

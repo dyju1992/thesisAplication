@@ -25,13 +25,14 @@ import DatabasePackage.DbHandlerMatrix;
 import UsersPackage.User;
 
 
-public class ShowManipulatorsActivity extends Activity {
+public class ShowManipulatorsActivity extends AppCompatActivity {
 
     private ListView listView;
     private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_manipulators_activity);
 

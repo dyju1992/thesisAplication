@@ -21,6 +21,7 @@ public class ExamplesActivity extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstancedSave){
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstancedSave);
         setContentView(R.layout.examples_activity);
         User user = (User) getIntent().getSerializableExtra("user");
@@ -38,7 +39,6 @@ public class ExamplesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(ExamplesActivity.this, ExamplesEx1Activity.class);
-                intent.putExtra("user", user);
                 startActivity(intent);
             }
         });
@@ -46,35 +46,40 @@ public class ExamplesActivity extends AppCompatActivity {
         inverseEx2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //drugi przyklad z zadaniem odwrotnym
+                Intent intent = new Intent(ExamplesActivity.this, ExamplesEx2Activity.class);
+                startActivity(intent);
             }
         });
 
         inverseEx3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //trzeci przyklad z zadaniem odwrotnym
+                Intent intent = new Intent(ExamplesActivity.this, ExamplesEx3Activity.class);
+                startActivity(intent);
             }
         });
 
         simpleEx1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //pierwszy przykald z zadaniem prostym
+                Intent intent = new Intent(ExamplesActivity.this, ExamplesEx4Activity.class);
+                startActivity(intent);
             }
         });
 
         simpleEx2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //drugi przykald z zzadaniem prostym
+                Intent intent = new Intent(ExamplesActivity.this, ExamplesEx5Activity.class);
+                startActivity(intent);
             }
         });
 
         simpleEx3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //trzeci przyklad z zaadaniem prostym
+                Intent intent = new Intent(ExamplesActivity.this, ExamplesEx6Activity.class);
+                startActivity(intent);
             }
         });
     }

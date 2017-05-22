@@ -22,9 +22,7 @@ import java.util.regex.Pattern;
 import DatabasePackage.DbHandlerMatrix;
 import UsersPackage.User;
 
-/**
- * Created by dyju on 2017-02-23.
- */
+
 public class AddNewManipulatorActivity extends AppCompatActivity implements Validator.ValidationListener {
 
     @NotEmpty
@@ -40,7 +38,15 @@ public class AddNewManipulatorActivity extends AppCompatActivity implements Vali
     Button nextButton;
     Validator validator;
     User user;
-    ExamplesFacade examplesFacade;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.add_new_manipulator_activity);
+        user = (User)getIntent().getSerializableExtra("user");
+        init();
+    }
 
     public void init(){
 
@@ -61,23 +67,12 @@ public class AddNewManipulatorActivity extends AppCompatActivity implements Vali
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_new_manipulator_activity);
-        user = (User)getIntent().getSerializableExtra("user");
-
-
-        init();
-    }
-
-
-    @Override
     public void onValidationSucceeded() {
         DbHandlerMatrix dbHandlerMatrix = new DbHandlerMatrix(this);
         if(userHasManipulatorWithThatName(dbHandlerMatrix)){
             Toast.makeText(this, "Zmień nazwę manipulatora.", Toast.LENGTH_LONG).show();
         }else{
-            if(allDataAreNumeric()) {
+            if(allDataAreNumeric() && allParametersHasGoodLength()) {
                 DHForUserDto dhForUserDto = new DHForUserDto(user.getID(), new DhDatas(String.valueOf(theta.getText()), String.valueOf(alpha.getText()), String.valueOf(d.getText()), String.valueOf(a.getText()), String.valueOf(nameOfmanipulator.getText())));
                 dbHandlerMatrix.addNewDataAboutmanipulator(dhForUserDto);
                 Intent intent = new Intent(AddNewManipulatorActivity.this, ManipulatorDetailsActivity.class);
@@ -88,6 +83,15 @@ public class AddNewManipulatorActivity extends AppCompatActivity implements Vali
         }
 
 
+    }
+
+    private boolean allParametersHasGoodLength(){
+        boolean isValid = a.getText().toString().split(Pattern.quote(",")).length==3 && theta.getText().toString().split(Pattern.quote(",")).length==3 &&
+                alpha.getText().toString().split(Pattern.quote(",")).length==3 && d.getText().toString().split(Pattern.quote(",")).length==3;
+        if(isValid==false){
+            Toast.makeText(this, "W manipulatorze trójczłonowym powinno być po trzy parametry w notacji Denavita Hartenberga", Toast.LENGTH_LONG).show();
+        }
+        return isValid;
     }
 
     private boolean allDataAreNumeric(){

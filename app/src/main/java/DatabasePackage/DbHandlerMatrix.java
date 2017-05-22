@@ -78,8 +78,8 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
         return queryExecutor(query);
     }
 
-    public ArrayList<DHForUserDto> getDhForManipulatorName(String name){
-        String query = "SELECT "+ MANIPULATOR_NAME + "," + ALPHA_ANGLES  + "," + THETA_ANGLES  + "," + A_DIMENSIONS  + "," + D_DIMENSIONS + " FROM "+ DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + name + "\"";
+    public ArrayList<DHForUserDto> getDhForManipulatorName(String manipulatorName, String userId){
+        String query = "SELECT "+ MANIPULATOR_NAME + "," + ALPHA_ANGLES  + "," + THETA_ANGLES  + "," + A_DIMENSIONS  + "," + D_DIMENSIONS + " FROM "+ DH_TABLE + " WHERE " + MANIPULATOR_NAME + " = \"" + manipulatorName + "\"" + " AND " + USER_ID + " = \"" + userId + "\"";;
         return queryExecutor(query);
     }
 
@@ -163,6 +163,30 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
                 dhDatas.setTheta("theta1(t),theta2(t),0");
                 dhDatas.setA("0,0,l3");
                 dhDatas.setD("0,lambda2,lambda3(t)");
+                dhDatas.setManipulatorName(name);
+                break;
+
+            case "Manipulator_2":
+                dhDatas.setAlpha("90,90,0");
+                dhDatas.setTheta("theta1(t),90,theta3(t)");
+                dhDatas.setA("0,0,l3");
+                dhDatas.setD("0,lambda2(t),lambda3");
+                dhDatas.setManipulatorName(name);
+                break;
+
+            case "Manipulator_4":
+                dhDatas.setAlpha("90,90,90");
+                dhDatas.setTheta("theta1(t),theta2(t),0");
+                dhDatas.setA("0,0,l3");
+                dhDatas.setD("0,lambda2,lambda3(t)");
+                dhDatas.setManipulatorName(name);
+                break;
+
+            case "Manipulator_5":
+                dhDatas.setAlpha("90,90,0");
+                dhDatas.setTheta("theta1(t),90,theta3(t)");
+                dhDatas.setA("0,0,l3");
+                dhDatas.setD("0,lambda2(t),lambda3");
                 dhDatas.setManipulatorName(name);
                 break;
 

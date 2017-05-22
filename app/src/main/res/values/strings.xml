@@ -1,21 +1,23 @@
 <resources>
     <string name="app_name">ThesisApplication</string>
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="version_select_title">Please choose your account version</string>
+    <string name="title_activity_menu">ThesisApplication</string>
+    <string name="version_select_title">Wybierz rodzaj konta</string>
 
     <string-array name="accountVersion">
-        <item>Select your account type</item>
-        <item>Education</item>
-        <item>PRO</item>
+        <item><b>Wybierz rodzaj konta</b></item>
+        <item><b>Edukacyjne</b></item>
+        <item><b>PRO</b></item>
     </string-array>
-    <string name="title_activity_about_manipulator">AboutManipulatorActivity</string>
+    <string name="title_activity_about_manipulator">Manipulator robotyczny</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_example_lvl1">ExampleLvl1Activity</string>
-    <string name="title_show_manipulators_activity">ShowManipulatorActivity</string>
-    <string name="add_new_manipulator_activity">AddNewManipulatorActivity</string>
-    <string name="result_activity">ResultActivity</string>
-    <string name="manipulator_details_activity">ManipulatorDetailsActivity</string>
-
+    <string name="title_inverse_ex">Zadanie odwrotne kinematyki manipulatora</string>
+    <string name="title_simple_ex">Zadanie proste kinematyki manipulatora</string>
+    <string name="title_activity_example_inverse">Przykład zadania odwrotnego</string>
+    <string name="title_activity_example_simple">Przykład zadania prostego</string>
+    <string name="title_show_manipulators_activity">Lista moich manipulatorów</string>
+    <string name="add_new_manipulator_activity">Dodaj nowy manipulator</string>
+    <string name="result_activity">Rozwiązanie</string>
+    <string name="manipulator_details_activity">Szczegóły manipulatora</string>
 
 </resources>

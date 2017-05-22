@@ -3,6 +3,8 @@
         android:id="@+id/Row"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp" >
+        android:textSize="20sp"
+        android:textColor="#0a1117"
+        android:textStyle="bold">
     </TextView>
 

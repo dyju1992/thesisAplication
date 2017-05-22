@@ -7,49 +7,56 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dyju.thesisapplication.MainActivity">
+    tools:context="com.example.dyju.thesisapplication.MainActivity"
+    android:background="@drawable/tlo"
+    android:backgroundTint="#60FFFFFF"
+    android:backgroundTintMode="src_over">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Witam w przykładach podsumowujących naukę zadania odwrotnego i prostego kinematyki manipulatorów" />
+        android:text="Witam w przykładach podsumowujących naukę zadania odwrotnego i prostego kinematyki manipulatorów"
+        android:textStyle="bold"
+        android:textColor="#0a1117"
+        android:textSize="17dp"
+        android:textAlignment="center"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/inverseEx1"
         android:text="Zadanie odwrotne nr. 1"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="70dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/inverseEx2"
         android:text="Zadanie odwrotne nr. 2"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="120dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/inverseEx3"
         android:text="Zadanie odwrotne nr. 3"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="170dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/simpleEx1"
         android:text="Zadanie proste nr. 1"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="220dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/simpleEx2"
         android:text="Zadanie proste nr. 2"
-        android:layout_marginTop="250dp"/>
+        android:layout_marginTop="270dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/simpleEx3"
         android:text="Zadanie proste nr. 3"
-        android:layout_marginTop="300dp"/>
+        android:layout_marginTop="320dp"/>
 
 
 </RelativeLayout>
