@@ -127,6 +127,14 @@
             android:name=".ExamplesActivities.ExamplesEx6Activity"
             android:label="@string/title_activity_example_simple"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".LearningActivities.SimpleExampleBarsActivity.ExampleSimpleActivity"
+            android:label="@string/title_activity_example_simple"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".LearningActivities.HowCalcInverseExBars.HowCalculateInverseExActivity"
+            android:label="@string/title_activity_how_calculate_inverse"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.dyju.thesisapplication.LearningActivities.AboutInverseActivity;
+import com.example.dyju.thesisapplication.LearningActivities.HowCalcInverseExBars.HowCalculateInverseExActivity;
 import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.ExampleInverseActivity;
 import com.example.dyju.thesisapplication.LearningActivities.ForWhoInverseExerciseActivity;
 
@@ -15,6 +16,7 @@ public class InverseExerciseActivity extends AppCompatActivity {
     Button exampleButton;
     Button aboutReverseButton;
     Button forWhoButton;
+    Button howCalculate;
 
 
     @Override
@@ -31,6 +33,7 @@ public class InverseExerciseActivity extends AppCompatActivity {
         exampleButton = (Button)findViewById(R.id.example);
         aboutReverseButton = (Button)findViewById(R.id.aboutReverse);
         forWhoButton = (Button)findViewById(R.id.forWho);
+        howCalculate = (Button)findViewById(R.id.howCalculate);
 
         exampleButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,14 @@ public class InverseExerciseActivity extends AppCompatActivity {
                 Intent intent = new Intent(InverseExerciseActivity.this, ForWhoInverseExerciseActivity.class);
                 startActivity(intent);
 
+            }
+        });
+
+        howCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InverseExerciseActivity.this, HowCalculateInverseExActivity.class);
+                startActivity(intent);
             }
         });
     }

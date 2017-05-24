@@ -14,11 +14,15 @@
         android:layout_height="wrap_content"
         android:text="Rozpatrzymy teraz następujący manipulator. Przygotuj na kartce notacje DH dla tego manipulatora i gdy będziesz gotów nacisnij dalej.  " />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/manipulator_oop2_zadanie"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toDhButton"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="460dp"
         android:text="Dalej"/>
 
 

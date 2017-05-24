@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.dyju.thesisapplication.LearningActivities.SimpleExampleBarsActivity.ExampleSimpleActivity;
 import com.example.dyju.thesisapplication.SimpleExerciseLearning.AboutSimpleExerciseActivity;
 import com.example.dyju.thesisapplication.SimpleExerciseLearning.ForWhoSimpleExercise;
 
@@ -41,6 +42,14 @@ public class SimpleExerciseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SimpleExerciseActivity.this, AboutSimpleExerciseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        simpleExercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SimpleExerciseActivity.this, ExampleSimpleActivity.class);
                 startActivity(intent);
             }
         });

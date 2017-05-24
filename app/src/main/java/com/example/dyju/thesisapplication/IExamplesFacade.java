@@ -6,9 +6,7 @@ import DatabasePackage.DbHandler;
 import DatabasePackage.DbHandlerMatrix;
 import UsersPackage.User;
 
-/**
- * Created by dyju on 2017-04-09.
- */
+
 public interface IExamplesFacade {
 
     Boolean dhDatasAreEntered(DhDatas dhDatas);

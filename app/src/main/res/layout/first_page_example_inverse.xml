@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zadanie odwrotne kinematyki manipulatora składa się z nastepujących etapów:" />
+        android:text="Zadanie proste kinematyki manipulatora składa się z nastepujących etapów:" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="270dp"
-        android:text="5. Wyliczenie zmiennych."/>
+        android:text="5. Wyliczenie zmiennych przegubowych."/>
 
 
 

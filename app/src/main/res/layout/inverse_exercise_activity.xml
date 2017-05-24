@@ -34,11 +34,19 @@
         android:text="Zadanie odwrotne kinematyki - informacje podstawowe"
         android:id="@+id/aboutReverse"
         android:layout_marginTop="120dp"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Jak obliczyć zadanie odwrotne kinematyki manipulatora?"
-        android:id="@+id/example"
+        android:id="@+id/howCalculate"
         android:layout_marginTop="180dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Przykład"
+        android:id="@+id/example"
+        android:layout_marginTop="240dp"/>
 
 </RelativeLayout>

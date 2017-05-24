@@ -15,6 +15,8 @@
     <string name="title_simple_ex">Zadanie proste kinematyki manipulatora</string>
     <string name="title_activity_example_inverse">Przykład zadania odwrotnego</string>
     <string name="title_activity_example_simple">Przykład zadania prostego</string>
+    <string name="title_activity_how_calculate_inverse">Obliczanie zadania odwrotnego</string>
+    <string name="title_activity_how_calculate_simple">Obliczanie zadania prostego</string>
     <string name="title_show_manipulators_activity">Lista moich manipulatorów</string>
     <string name="add_new_manipulator_activity">Dodaj nowy manipulator</string>
     <string name="result_activity">Rozwiązanie</string>
