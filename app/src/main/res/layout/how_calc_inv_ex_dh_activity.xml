@@ -13,24 +13,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Uzupełnienie macierzy przejścia między poszczególnymi ogniwami" />
+        android:text="2. Uzupełnienie w tabeli Notację Denavita Hartenberga" />
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/a1_przyklad"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:src="@drawable/a2_przyklad"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:src="@drawable/a3_przyklad"/>
-
+        android:text="Po rozrysowaniu osi i poszczególnych wielkości, należy wprowadzić zaznaczone wcześniej wielkości w tabeli notacji Denavita Hartenberga
+        \n\n\nJakie dane powinny znaleźć się w tabeli:
+        \n\ntheta(i) - kąt pomiędzy x(i-1) a x(i) wokół z(i-1)
+         \nalpha(i) - kąt pomiędzy z(i-1) a z(i) wokół x(i)
+         \na(i) - odległość między z(i-1) a z(i)
+         \nd(i) - odległość między x(i-1) a x(i)"
+        android:layout_marginTop="60dp"/>
 
 </RelativeLayout>

@@ -9,29 +9,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dyju.thesisapplication.DHForUserDto;
 import com.example.dyju.thesisapplication.DhDatas;
 import com.example.dyju.thesisapplication.IResultCalculationService;
-import com.example.dyju.thesisapplication.MultipleTransitionMatrix;
 import com.example.dyju.thesisapplication.R;
 import com.example.dyju.thesisapplication.ResultCalculationService;
 import com.example.dyju.thesisapplication.ResultValidationMessages;
-import com.example.dyju.thesisapplication.TransitionMatrix;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.regex.Pattern;
 
 
-public class ResultInverseExampleActivity extends AppCompatActivity implements Validator.ValidationListener {
+public class ExampleResultActivity extends AppCompatActivity implements Validator.ValidationListener {
 
     Button checkResultButton;
     TextView firstVariable;
@@ -48,7 +40,7 @@ public class ResultInverseExampleActivity extends AppCompatActivity implements V
     Validator validator;
     IResultCalculationService resultCalculationService;
 
-    public ResultInverseExampleActivity() {
+    public ExampleResultActivity() {
         this.resultCalculationService = new ResultCalculationService();
     }
 
@@ -94,6 +86,11 @@ public class ResultInverseExampleActivity extends AppCompatActivity implements V
                 secondVariable.setText("lambda2(t):");
                 thirdVariable.setText("theta3(t):");
                 break;
+            case "Manipulator_3":
+                firstVariable.setText("lambda1(t):");
+                secondVariable.setText("theta2(t):");
+                thirdVariable.setText("theta3(t):");
+                break;
 
             default:
                 firstVariable.setText("rx:");
@@ -113,6 +110,9 @@ public class ResultInverseExampleActivity extends AppCompatActivity implements V
         ResultValidationMessages validateMessage = resultCalculationService.getMessageFromValidationOfValues(dhDatas.getManipulatorName(), values);
         if(validateMessage.equals(ResultValidationMessages.OK)){
             Toast.makeText(this, "Wykonałeś poprawnie zadanie. Gratuluje!!!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(ExampleResultActivity.this, ExamplesActivity.class);
+            startActivity(intent);
+
         }
         else{
             showMessage(validateMessage);
@@ -156,55 +156,4 @@ public class ResultInverseExampleActivity extends AppCompatActivity implements V
         }
 
     }
-
-//    protected List<String> getDataToCheck(String[][] matrix){
-//        Set<String> datasToCheck = new HashSet<>();
-//        List<String> datas = new ArrayList<>();
-//
-//        for(int i = 0; i<4; i++){
-//            for(int j = 0; j<4; j++){
-//                datasToCheck.addAll(splitedDatasToCheck(matrix[i][j]));
-//            }
-//        }
-//
-//        for (String data : datasToCheck){
-//            datas.add(data);
-//        }
-//
-//        return datas;
-//    }
-
-
-//    protected List<String> splitedDatasToCheck(String data){
-//        ArrayList<String> list = new ArrayList<>();
-//        String[] plusSplited = data.split(Pattern.quote("+"));
-//        for(int i = 0; i<plusSplited.length; i++){
-//            String[] multSplited = plusSplited[i].split(Pattern.quote("*"));
-//            for(int j = 0; j<multSplited.length; j++){
-//                if(multSplited[j].contains("(t)")){
-//                    list.add(multSplited[j]);
-//                }
-//            }
-//        }
-//        return getDatasFromTrygonometricFunctions(list);
-//    }
-
-//    protected List<String> getDatasFromTrygonometricFunctions(List<String> datas){
-//        ArrayList<String> resultList = new ArrayList<>();
-//        for(String data : datas){
-//            int start = data.indexOf("(")+1;
-//            int end = data.indexOf(")")+1;
-//
-//            resultList.add(data.substring(start, end));
-//        }
-//        return resultList;
-//    }
-
-
-
-
-
-
-
-
 }

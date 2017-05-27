@@ -24,15 +24,23 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/showManipulators"
+        android:id="@+id/aboutProAccount"
         android:layout_marginTop="50dp"
+        android:text="Kilka słów o koncie pro"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/showManipulators"
+        android:layout_marginTop="110dp"
         android:text="Wcześniej wyliczone wartości"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/addNewManipulator"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="170dp"
         android:text="Dodaj nowy manipulator"/>
+
 
 
 

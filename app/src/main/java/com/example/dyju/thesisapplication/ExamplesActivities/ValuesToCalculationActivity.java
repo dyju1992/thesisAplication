@@ -50,7 +50,7 @@ public class ValuesToCalculationActivity extends AppCompatActivity {
         goToResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ValuesToCalculationActivity.this, ResultInverseExampleActivity.class);
+                Intent intent = new Intent(ValuesToCalculationActivity.this, ExampleResultActivity.class);
                 intent.putExtra("dhDatas", dhDatas);
                 startActivity(intent);
             }

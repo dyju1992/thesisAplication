@@ -174,6 +174,14 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
                 dhDatas.setManipulatorName(name);
                 break;
 
+            case "Manipulator_3":
+                dhDatas.setAlpha("90,90,0");
+                dhDatas.setTheta("90,theta2(t),theta3(t)");
+                dhDatas.setD("lambda1(t),lambda2,lambda3");
+                dhDatas.setA("0,0,l3");
+                dhDatas.setManipulatorName(name);
+                break;
+
             case "Manipulator_4":
                 dhDatas.setAlpha("90,90,90");
                 dhDatas.setTheta("theta1(t),theta2(t),0");
@@ -190,6 +198,14 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
                 dhDatas.setManipulatorName(name);
                 break;
 
+            case "Manipulator_6":
+                dhDatas.setAlpha("90,90,0");
+                dhDatas.setTheta("90,theta2(t),theta3(t)");
+                dhDatas.setD("lambda1(t),lambda2,lambda3");
+                dhDatas.setA("0,0,l3");
+                dhDatas.setManipulatorName(name);
+                break;
+
             case "default":
                 dhDatas.setA("1");
                 dhDatas.setAlpha("1");
@@ -201,12 +217,4 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
 
         return dhForUserDto;
     }
-
-//    private String getQueryForManipulatorName(String name){
-//        switch (name){
-//            case "first_manipulator":
-//                return getQueryForFirstmani
-//        }
-//    }
-
 }

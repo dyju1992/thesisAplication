@@ -12,9 +12,6 @@ import java.util.ArrayList;
 import UsersPackage.AccountVersion;
 import UsersPackage.User;
 
-/**
- * Created by dyju on 2017-02-21.
- */
 public class DbHandler extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;

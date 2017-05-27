@@ -36,6 +36,10 @@
             android:label="Wersja PRO"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".ProUsersClasses.AboutProAccountActivity"
+            android:label="O koncie PRO"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".EducationMenuActivity"
             android:label="Wersja edukacyjna"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -92,7 +96,7 @@
             android:label="@string/title_activity_example_inverse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".ExamplesActivities.ResultInverseExampleActivity"
+            android:name=".ExamplesActivities.ExampleResultActivity"
             android:label="@string/title_activity_example_inverse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ProUsersClasses.ShowManipulatorsActivity"
@@ -134,6 +138,10 @@
         <activity
             android:name=".LearningActivities.HowCalcInverseExBars.HowCalculateInverseExActivity"
             android:label="@string/title_activity_how_calculate_inverse"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".LearningActivities.HowCalcSimpleExBars.HowCalculateSimpleExActivity"
+            android:label="@string/title_activity_how_calculate_simple"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

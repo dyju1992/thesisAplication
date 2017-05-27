@@ -23,26 +23,26 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="alpha"
+        android:hint="alpha [o]"
         android:id="@+id/alpha"
         android:layout_marginTop="90dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="theta"
+        android:hint="theta [o]"
         android:id="@+id/theta"
         android:layout_marginTop="130dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="a"
+        android:hint="a [m]"
         android:id="@+id/aLength"
         android:layout_marginTop="170dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="d"
+        android:hint="d [m]"
         android:id="@+id/dLength"
         android:layout_marginTop="210dp"/>
 
@@ -52,10 +52,5 @@
         android:id="@+id/nextButton"
         android:layout_marginTop="250dp"
         android:text="Dalej"/>
-
-
-
-
-
 
 </RelativeLayout>

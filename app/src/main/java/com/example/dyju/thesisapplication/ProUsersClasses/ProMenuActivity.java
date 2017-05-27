@@ -18,6 +18,7 @@ public class ProMenuActivity extends AppCompatActivity {
     TextView welcomeText;
     Button showManipulatorsBtn;
     Button addNewManipulatorBtn;
+    Button informationAboutProAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -27,6 +28,7 @@ public class ProMenuActivity extends AppCompatActivity {
         User user = (User)getIntent().getSerializableExtra("user");
         showManipulatorsBtn = (Button)findViewById(R.id.showManipulators);
         addNewManipulatorBtn = (Button)findViewById(R.id.addNewManipulator);
+        informationAboutProAccount = (Button)findViewById(R.id.aboutProAccount);
         init(user);
     }
 
@@ -48,6 +50,14 @@ public class ProMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProMenuActivity.this, AddNewManipulatorActivity.class);
                 intent.putExtra("user", user);
+                startActivity(intent);
+            }
+        });
+
+        informationAboutProAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProMenuActivity.this, AboutProAccountActivity.class);
                 startActivity(intent);
             }
         });

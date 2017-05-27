@@ -14,7 +14,7 @@ public class HowCalcInvDHActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.dh_lvl1_activity, container, false);
+        View view = inflater.inflate(R.layout.how_calc_inv_ex_dh_activity, container, false);
 
         return view;
 

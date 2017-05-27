@@ -13,21 +13,25 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wyliczenie zmiennych:"
-        android:textSize="17dp"
-        android:textStyle="bold"
-        android:textAlignment="center"/>
+        android:text="4. Wyliczenie wektora położenia chwytaka względem początku układu" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aby obliczyć wektor położenia chwytaka względem początku układu należy obliczyć wektory położenia pomiędzy kolejnymi układami, według poniższych wzorów."
+        android:layout_marginTop="40dp"/>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/wektor_wzory"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Do wyliczenia wartości składowych końcówki chwytaka pomocny będzie wektor R30 wyliczony w poprzednim kroku.
-        \nPierwszy wiersz tego wektora odpowiada składowej x, drugi składowej y a trzeci składowej z."
-        android:layout_marginTop="40dp"/>
-
-
-
+        android:text="R - kolejne wektory położenia
+        \n\nA - macierze przejścia"
+        android:layout_marginTop="320dp"/>
 
 
 </RelativeLayout>

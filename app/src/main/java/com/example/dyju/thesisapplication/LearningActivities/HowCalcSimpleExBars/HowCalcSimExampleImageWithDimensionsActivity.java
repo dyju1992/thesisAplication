@@ -1,4 +1,4 @@
-package com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities;
+package com.example.dyju.thesisapplication.LearningActivities.HowCalcSimpleExBars;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,16 +8,14 @@ import android.view.ViewGroup;
 
 import com.example.dyju.thesisapplication.R;
 
-/**
- * Created by dyju on 2017-03-28.
- */
-public class ExampleResultLvl1Activity extends Fragment {
+
+public class HowCalcSimExampleImageWithDimensionsActivity extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
 
-        View view = inflater.inflate(R.layout.example_result_lvl1_activity, container, false);
+        View view = inflater.inflate(R.layout.first_example_image_with_dimensions_activity, container, false);
         return view;
 
 

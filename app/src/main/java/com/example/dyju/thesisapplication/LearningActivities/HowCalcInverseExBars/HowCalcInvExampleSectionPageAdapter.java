@@ -4,14 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.DHActivity;
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.ExampleResultLvl1Activity;
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.FirstExampleImageWithDimensionsActivity;
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.FirstExampleThema;
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.FirstPageExamplesLvl1;
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.R30VectorCalculationActivity;
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.TransitionMatrixAllLvl1Activity;
-
 
 public class HowCalcInvExampleSectionPageAdapter extends FragmentPagerAdapter {
 

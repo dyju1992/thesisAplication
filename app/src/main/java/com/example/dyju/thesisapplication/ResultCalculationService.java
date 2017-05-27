@@ -25,24 +25,36 @@ public class ResultCalculationService implements IResultCalculationService {
     public ResultValidationMessages getMessage(String manipulatorName, Map<String, String> values, Map<String, String> validResult){
         switch (manipulatorName){
             case "Manipulator_1":
-                if(!theta1IsValid(values.get("theta1(t):"), validResult)){
+                if(!isCorrectlyCalculate("theta1", validResult, values.get("theta1(t):"))){
                     return ResultValidationMessages.INVALIDFIRSTVALUE;
                 }
-                if(!theta2IsValid(values.get("theta2(t):"), validResult)){
+                if(!isCorrectlyCalculate("theta2", validResult, values.get("theta2(t):"))){
                     return ResultValidationMessages.INVALIDSECONDVALUE;
                 }
-                if(!lambda3IsValid(values.get("lambda3:"), validResult)){
+                if(!isCorrectlyCalculate("lambda3",validResult, values.get("lambda3:"))){
                     return ResultValidationMessages.INVALIDTHIRDVALUE;
                 }
                 return ResultValidationMessages.OK;
             case "Manipulator_2":
-                if(!theta1IsValid(values.get("theta1(t):"), validResult)){
+                if(!isCorrectlyCalculate("theta1", validResult, values.get("theta1(t):"))){
                     return ResultValidationMessages.INVALIDFIRSTVALUE;
                 }
-                if(!lambda2IsValid(values.get("lambda2(t):"), validResult)){
+                if(!isCorrectlyCalculate("lambda2", validResult, values.get("lambda2(t):"))){
                     return ResultValidationMessages.INVALIDSECONDVALUE;
                 }
-                if(!theta3IsValid(values.get("theta3(t):"), validResult)){
+                if(!isCorrectlyCalculate("theta3", validResult, values.get("theta3(t):"))){
+                    return ResultValidationMessages.INVALIDTHIRDVALUE;
+                }
+                return ResultValidationMessages.OK;
+
+            case "Manipulator_3":
+                if(!isCorrectlyCalculate("lambda1", validResult, values.get("lambda1(t):"))){
+                    return ResultValidationMessages.INVALIDFIRSTVALUE;
+                }
+                if(!isCorrectlyCalculate("theta2", validResult, values.get("theta2(t):"))){
+                    return ResultValidationMessages.INVALIDSECONDVALUE;
+                }
+                if(!isCorrectlyCalculate("theta3", validResult, values.get("theta3(t):"))){
                     return ResultValidationMessages.INVALIDTHIRDVALUE;
                 }
                 return ResultValidationMessages.OK;
@@ -59,23 +71,15 @@ public class ResultCalculationService implements IResultCalculationService {
                 return ResultValidationMessages.OK;
         }
     }
-    private Boolean theta1IsValid(String writtenValue, Map<String, String> validResult){
-        return validResult.get("theta11").equals(writtenValue) || validResult.get("theta12").equals(writtenValue);
-    }
 
-    private Boolean theta2IsValid(String writtenValue, Map<String, String> validResult){
-        return validResult.get("theta21").equals(writtenValue) || validResult.get("theta22").equals(writtenValue) || validResult.get("theta23").equals(writtenValue) || validResult.get("theta24").equals(writtenValue);
+    public boolean isCorrectlyCalculate(String exp, Map<String, String> valuesFromDb, String value){
+        for(String key : valuesFromDb.keySet()){
+            if(key.contains(exp) && valuesFromDb.get(key).equals(value)){
+                return true;
+            }
+        }
+        return false;
     }
-    private Boolean theta3IsValid(String writtenValue, Map<String, String> validResult){
-        return validResult.get("theta31").equals(writtenValue);
-    }
-    private Boolean lambda3IsValid(String writtenValue, Map<String, String> validResult){
-        return validResult.get("lambda31").equals(writtenValue) || validResult.get("lambda32").equals(writtenValue) || validResult.get("lambda33").equals(writtenValue) || validResult.get("lambda34").equals(writtenValue);
-    }
-    private Boolean lambda2IsValid(String writtenValue, Map<String, String> validResult){
-        return validResult.get("lambda21").equals(writtenValue) || validResult.get("lambda22").equals(writtenValue);
-    }
-
 
     @Override
     public Map<String,String> getDatasForManipulator(String name) {
@@ -97,6 +101,15 @@ public class ResultCalculationService implements IResultCalculationService {
                 datas.put("l3", "1");
                 break;
 
+            case "Manipulator_3":
+                datas.put("rx", "1");
+                datas.put("ry", "1");
+                datas.put("rz", "2");
+                datas.put("lambda2", "0.5");
+                datas.put("lambda3", "1");
+                datas.put("l3", "1");
+                break;
+
             case "Manipulator_4":
                 datas.put("theta1", "60");
                 datas.put("theta2", "30");
@@ -110,6 +123,15 @@ public class ResultCalculationService implements IResultCalculationService {
                 datas.put("theta3", "60");
                 datas.put("lambda2", "2");
                 datas.put("lambda3", "0.5");
+                datas.put("l3", "1");
+                break;
+
+            case "Manipulator_6":
+                datas.put("theta2", "30");
+                datas.put("theta3", "60");
+                datas.put("lambda2", "2");
+                datas.put("lambda3", "0.5");
+                datas.put("lambda1", "0.5");
                 datas.put("l3", "1");
                 break;
         }
@@ -129,12 +151,20 @@ public class ResultCalculationService implements IResultCalculationService {
                 validResult.putAll(getResultForSecondManipulator());
                 break;
 
+            case "Manipulator_3":
+                validResult.putAll(getResultForThirdmanipulator());
+                break;
+
             case "Manipulator_4":
                 validResult.putAll(getResultForFourthmanipulator());
                 break;
 
             case "Manipulator_5":
                 validResult.putAll(getResultForFiveManipulator());
+                break;
+
+            case "Manipulator_6":
+                validResult.putAll(getResultForSixManipulator());
                 break;
 
         }
@@ -204,6 +234,29 @@ public class ResultCalculationService implements IResultCalculationService {
         return values;
     }
 
+    public Map<String, String> getResultForThirdmanipulator(){
+        Map<String, String> datas = getDatasForManipulator("Manipulator_3");
+        Map<String, String> values = new HashMap<>();
+        Double rx = Double.valueOf(datas.get("rx"));
+        Double ry = Double.valueOf(datas.get("ry"));
+        Double rz = Double.valueOf(datas.get("rz"));
+        Double l3 = Double.valueOf(datas.get("l3"));
+        Double lambda3 = Double.valueOf(datas.get("lambda3"));
+        Double lambda2 = Double.valueOf(datas.get("lambda2"));
+
+        Double theta3 = Double.valueOf(Math.asin((rx-lambda2)/l3));
+        Double theta21 = 2 * Math.atan((2*lambda3 - Math.sqrt(4*(Math.pow(lambda3, 2) - Math.pow(ry, 2)+Math.pow(l3, 2)+Math.pow(l3, 2)*Math.pow(Math.cos(theta3), 2))))/2*(l3 * Math.cos(theta3 + ry)));
+        Double theta22 = 2 * Math.atan((2*lambda3 + Math.sqrt(4*(Math.pow(lambda3, 2) - Math.pow(ry, 2)+Math.pow(l3, 2)+Math.pow(l3, 2)*Math.pow(Math.cos(theta3), 2))))/2*(l3 * Math.cos(theta3 + ry)));
+        Double lambda11 = rz + Math.cos(theta21)*lambda3 - l3*Math.cos(theta3)*Math.sin(theta21);
+        Double lambda12 = rz + Math.cos(theta22)*lambda3 - l3*Math.cos(theta3)*Math.sin(theta22);
+        values.put("theta3", String.valueOf(round(Math.toDegrees(theta3), 2)));
+        values.put("theta21", String.valueOf(round(Math.toDegrees(theta21), 2)));
+        values.put("theta22", String.valueOf(round(Math.toDegrees(theta22), 2)));
+        values.put("lambda11", String.valueOf(round(lambda11, 2)));
+        values.put("lambda12", String.valueOf(round(lambda12, 2)));
+        return values;
+    }
+
     public Map<String, String> getResultForFourthmanipulator(){
         Map<String, String> datas = getDatasForManipulator("Manipulator_4");
         Map<String, String> values = new HashMap<>();
@@ -238,6 +291,25 @@ public class ResultCalculationService implements IResultCalculationService {
         values.put("ry", String.valueOf(round(ry, 2)));
         values.put("rz", String.valueOf(round(rz, 2)));
         return values;
+    }
+
+    private Map<String, String> getResultForSixManipulator(){
+        Map<String, String> datas = getDatasForManipulator("Manipulator_6");
+        Map<String, String> values = new HashMap<>();
+        Double theta2 = Math.toRadians(Double.valueOf(datas.get("theta2")));
+        Double theta3 = Math.toRadians(Double.valueOf(datas.get("theta3")));
+        Double lambda1 = Double.valueOf(datas.get("lambda1"));
+        Double lambda2 = Double.valueOf(datas.get("lambda2"));
+        Double lambda3 = Double.valueOf(datas.get("lambda3"));
+        Double l3 = Double.valueOf(datas.get("l3"));
+        Double rx = l3 * Math.sin(theta3) + lambda2;
+        Double ry = l3 * Math.cos(theta3) * Math.cos(theta2) + Math.sin(theta2) * lambda3;
+        Double rz = l3 * Math.cos(theta3) * Math.sin(theta2) - Math.cos(theta2) * lambda3 + lambda1;
+        values.put("rx", String.valueOf(round(rx, 2)));
+        values.put("ry", String.valueOf(round(ry, 2)));
+        values.put("rz", String.valueOf(round(rz, 2)));
+        return values;
+
     }
 
     public static double round(double value, int places) {
