@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.dyju.thesisapplication.R;
 
-/**
- * Created by dyju on 2017-03-28.
- */
+
 public class SimpleExampleResultActivity extends Fragment {
 
     @Override

@@ -10,22 +10,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dyju.thesisapplication.CalculationService;
-import com.example.dyju.thesisapplication.DHForUserDto;
 import com.example.dyju.thesisapplication.DhDatas;
 import com.example.dyju.thesisapplication.ICalculationService;
-import com.example.dyju.thesisapplication.MultipleTransitionMatrix;
-import com.example.dyju.thesisapplication.MultipleTransitionMatrixDto;
 import com.example.dyju.thesisapplication.R;
-import com.example.dyju.thesisapplication.TransitionMatrix;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
-import UsersPackage.User;
 
 
 public class ExamplesTransitionMatrixActivity extends AppCompatActivity implements Validator.ValidationListener{
@@ -92,7 +85,7 @@ public class ExamplesTransitionMatrixActivity extends AppCompatActivity implemen
 
     @Override
     public void onValidationSucceeded() {
-        String [] r30 = calculationService.getr30ForDhDatas(dhDatas);
+        String [] r30 = calculationService.getPositionVectorForDhDatas(dhDatas);
 //        if(!isValidRowInVector(r30[0], editText1.getText().toString())){
 //            View view = (EditText) findViewById(R.id.firstEditValue);
 //            String message = "Wprowadź ponownie wartość w pierwszym polu";

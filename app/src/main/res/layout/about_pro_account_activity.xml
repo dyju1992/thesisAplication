@@ -5,9 +5,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Konto pro umożliwia policzenie zadania prostego kinematyki dowolnego manipulatora trójczłonowego, tzn. oblicza wartości składowych wektora pozycji chwytaka tego manipulatora względem podstawy.
+        android:text="Konto pro umożliwia policzenie zadania prostego kinematyki dowolnego manipulatora, tzn. oblicza wartości składowych wektora pozycji chwytaka tego manipulatora względem podstawy.
         \n\nAby obliczyć zadanie proste manipulatora za pomocą aplikacji należy po wejściu w sekcję ''DODAJ NOWY MANIPULATOR'' określić nazwę manipulatora, oraz wartości jego zmiennych przegubowych.
-        \nPoszczególne wartości muszą zostać podane w odpowiednich polach po przecinku. Katy alpha oraz theta podajemy w stopniach, natomiast odległości d i a w metrach.
+        \nPoszczególne wartości muszą zostać podane w odpowiednich polach po przecinku. Kąty alpha oraz theta podajemy w stopniach, natomiast odległości d i a w metrach.
         \nPrzy odpowiednio zdefiniowanych zmiennych aplikacja powinna zwrócić wynik w metrach.
         \n\nWszystkie wcześniej wprowadzone i wyliczone wartości powinny być w sekcji 'WCZEŚNIEJ WYLICZONE WARTOŚCI''"
         android:textSize="17dp"/>

@@ -35,15 +35,15 @@ public class CalculationServiceTest {
     @Test
     public void getr30ForDhDatasTest(){
         DhDatas dhDatas = new DhDatas();
-        dhDatas.setAlpha("90,90,90");
-        dhDatas.setTheta("theta1(t),theta2(t),0");
-        dhDatas.setA("0,0,l3");
-        dhDatas.setD("0,lambda2,lambda3(t)");
+        dhDatas.setAlpha("90,90,0");
+        dhDatas.setTheta("90,90,90");
+        dhDatas.setA("0,0,0");
+        dhDatas.setD("0,1,1");
         dhDatas.setManipulatorName("test");
-        String[] datas = calculationService.getr30ForDhDatas(dhDatas);
-//        Assert.assertEquals("cos(theta1(t))*(l3*cos(theta2(t)+lambda3(t)*sin(theta2(t)))+sin(theta1(t))*lambda2", datas[0]);
-        Assert.assertEquals("sin(theta1(t))*(l3*cos(theta2(t)+lambda3(t)*sin(theta2(t)))-cos(theta1(t))*lambda2", datas[1]);
-        Assert.assertEquals("l3*sin(theta2(t))-lambda3(t)*cos(theta2(t))", datas[2]);
+        String[] datas = calculationService.getPositionVectorForDhDatas(dhDatas);
+        Assert.assertEquals(Double.valueOf("1"), Double.valueOf(datas[0]));
+        Assert.assertEquals(Double.valueOf("1"), Double.valueOf(datas[1]));
+        Assert.assertEquals(Double.valueOf("0"), Double.valueOf(datas[2]));
     }
 
     @Test

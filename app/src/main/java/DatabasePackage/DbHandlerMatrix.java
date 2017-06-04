@@ -150,19 +150,11 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
         dhForUserDto.setUserid(-1);
         DhDatas dhDatas = new DhDatas();
         switch (name){
-            case "first_manipulator":
-                dhDatas.setAlpha("0,0,0,90,90");
-                dhDatas.setA("0,l1,l2,0,l4");
-                dhDatas.setD("0,0,0,d4(t),0");
-                dhDatas.setTheta("theta1(t),theta2(t),theta3(t),180,theta5(t)");
-                dhDatas.setManipulatorName(name);
-                break;
-
             case "Manipulator_1":
-                dhDatas.setAlpha("90,90,90");
+                dhDatas.setAlpha("90,-90,0");
                 dhDatas.setTheta("theta1(t),theta2(t),0");
                 dhDatas.setA("0,0,l3");
-                dhDatas.setD("0,lambda2,lambda3(t)");
+                dhDatas.setD("lambda1,lambda2,lambda3(t)");
                 dhDatas.setManipulatorName(name);
                 break;
 
@@ -183,10 +175,10 @@ public class DbHandlerMatrix extends SQLiteOpenHelper {
                 break;
 
             case "Manipulator_4":
-                dhDatas.setAlpha("90,90,90");
+                dhDatas.setAlpha("90,-90,0");
                 dhDatas.setTheta("theta1(t),theta2(t),0");
                 dhDatas.setA("0,0,l3");
-                dhDatas.setD("0,lambda2,lambda3(t)");
+                dhDatas.setD("lambda1,lambda2,lambda3(t)");
                 dhDatas.setManipulatorName(name);
                 break;
 

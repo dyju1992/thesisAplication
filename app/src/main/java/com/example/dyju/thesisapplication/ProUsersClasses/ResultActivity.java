@@ -15,9 +15,7 @@ import java.util.Map;
 
 import UsersPackage.User;
 
-/**
- * Created by dyju on 2017-02-23.
- */
+
 public class ResultActivity extends AppCompatActivity {
 
     ICalculationService calculationService;

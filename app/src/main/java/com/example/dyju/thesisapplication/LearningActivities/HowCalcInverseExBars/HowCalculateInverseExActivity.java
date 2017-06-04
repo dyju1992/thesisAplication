@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.dyju.thesisapplication.LearningActivities.InverseExampleBarsActivities.ExampleLvl1SectionPageAdapter;
 import com.example.dyju.thesisapplication.R;
 
 

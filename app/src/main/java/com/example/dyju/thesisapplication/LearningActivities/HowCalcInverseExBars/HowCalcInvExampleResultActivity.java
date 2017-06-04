@@ -17,7 +17,7 @@ public class HowCalcInvExampleResultActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
 
-        View view = inflater.inflate(R.layout.example_result_lvl1_activity, container, false);
+        View view = inflater.inflate(R.layout.how_calc_inv_ex_result_activity, container, false);
         return view;
 
 

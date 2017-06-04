@@ -21,7 +21,7 @@ import com.example.dyju.thesisapplication.R;
 public class ExampleInverseActivity extends AppCompatActivity {
 
 
-    private ExampleLvl1SectionPageAdapter mSectionsPagerAdapter;
+    private SimpleExampleSectionPageAdapter mSectionsPagerAdapter;
 
 
     private ViewPager mViewPager;
@@ -33,7 +33,7 @@ public class ExampleInverseActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mSectionsPagerAdapter = new ExampleLvl1SectionPageAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new SimpleExampleSectionPageAdapter(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);

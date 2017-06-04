@@ -86,11 +86,12 @@ public class ResultCalculationService implements IResultCalculationService {
         Map<String, String> datas = new HashMap<>();
         switch (name){
             case "Manipulator_1":
-                datas.put("rx", "1");
-                datas.put("ry", "1");
-                datas.put("rz", "2");
+                datas.put("rx", "-0.7");
+                datas.put("ry", "-1.6");
+                datas.put("rz", "1.1");
                 datas.put("l3", "0.1");
                 datas.put("lambda2", "0.2");
+                datas.put("lambda1", "0.3");
                 break;
 
             case "Manipulator_2":
@@ -116,6 +117,7 @@ public class ResultCalculationService implements IResultCalculationService {
                 datas.put("lambda3", "2");
                 datas.put("l3", "0.1");
                 datas.put("lambda2", "0.2");
+                datas.put("lambda1", "0.3");
                 break;
 
             case "Manipulator_5":
@@ -181,28 +183,29 @@ public class ResultCalculationService implements IResultCalculationService {
             Double rz = Double.valueOf(datas.get("rz"));
             Double l3 = Double.valueOf(datas.get("l3"));
             Double lambda2 = Double.valueOf(datas.get("lambda2"));
-            Double theta11 = 2 * Math.atan((-2*rx - 2 * Math.sqrt(Math.pow(rx, 2)+Math.pow(ry, 2)+Math.pow(lambda2, 2)))/(2*(ry-lambda2)));
-            Double theta12 = 2 * Math.atan((-2*rx + 2 * Math.sqrt(Math.pow(rx, 2)+Math.pow(ry, 2)+Math.pow(lambda2, 2)))/(2*(ry-lambda2)));
-            Double A = rx * Math.cos(theta11) + ry*Math.sin(theta11) - l3;
-            Double A1 = rx * Math.cos(theta12) + ry*Math.sin(theta12) - l3;;
-            Double theta21 = 2 * Math.atan((-2*rz - 2 * Math.sqrt(Math.pow(rz, 2) - Math.pow(A, 2)))/(-2*(rx * Math.cos(theta11) + ry*Math.sin(theta11) + l3)));
-            Double theta22 = 2 * Math.atan((-2*rz + 2 * Math.sqrt(Math.pow(rz, 2) - Math.pow(A, 2)))/(-2*(rx * Math.cos(theta11) + ry*Math.sin(theta11) + l3)));
-            Double theta23 = 2 * Math.atan((-2*rz - 2 * Math.sqrt(Math.pow(rz, 2) - Math.pow(A1, 2)))/(-2*(rx * Math.cos(theta11) + ry*Math.sin(theta11) + l3)));
-            Double theta24 = 2 * Math.atan((-2*rz + 2 * Math.sqrt(Math.pow(rz, 2) - Math.pow(A1, 2)))/(-2*(rx * Math.cos(theta11) + ry*Math.sin(theta11) + l3)));
-            Double lambda31 = (- rz + l3*Math.sin(theta21))/Math.cos(theta21);
-            Double lambda32 = (- rz + l3*Math.sin(theta22))/Math.cos(theta22);
-            Double lambda33 = (- rz + l3*Math.sin(theta23))/Math.cos(theta23);
-            Double lambda34 = (- rz + l3*Math.sin(theta24))/Math.cos(theta24);
+            Double lambda1 = Double.valueOf(datas.get("lambda1"));
+            Double theta11 = 2 * Math.atan((2*rx - 2 * Math.sqrt(Math.pow(rx, 2)+Math.pow(ry, 2)-Math.pow(lambda2, 2)))/(2*(lambda2 - ry)));
+            Double theta12 = 2 * Math.atan((-2*rx + 2 * Math.sqrt(Math.pow(rx, 2)+Math.pow(ry, 2)-Math.pow(lambda2, 2)))/(2*(lambda2 - ry)));
+            Double A = rx * Math.cos(theta11) + ry*Math.sin(theta11);
+            Double A1 = rx * Math.cos(theta12) + ry*Math.sin(theta12);
+            Double theta21 = Math.acos((l3-rz)/A);
+            Double theta22 = Math.acos((l3-rz)/A1);
+//            Double theta23 = 2 * Math.atan((-2*rz - 2 * Math.sqrt(Math.pow(rz, 2) - Math.pow(A1, 2)))/(-2*(rx * Math.cos(theta11) + ry*Math.sin(theta11) + l3)));
+//            Double theta24 = 2 * Math.atan((-2*rz + 2 * Math.sqrt(Math.pow(rz, 2) - Math.pow(A1, 2)))/(-2*(rx * Math.cos(theta11) + ry*Math.sin(theta11) + l3)));
+            Double lambda31 = (rz-l3*Math.sin(theta21)-lambda1)/Math.cos(theta21);
+            Double lambda32 = (rz-l3*Math.sin(theta22)-lambda1)/Math.cos(theta22);
+//            Double lambda33 = (- rz + l3*Math.sin(theta23))/Math.cos(theta23);
+//            Double lambda34 = (- rz + l3*Math.sin(theta24))/Math.cos(theta24);
             values.put("theta11", String.valueOf(round(Math.toDegrees(theta11),2)));
             values.put("theta12", String.valueOf(round(Math.toDegrees(theta12), 2)));
             values.put("theta21", String.valueOf(round(Math.toDegrees(theta21),2)));
             values.put("theta22", String.valueOf(round(Math.toDegrees(theta22),2)));
-            values.put("theta23", String.valueOf(round(Math.toDegrees(theta23), 2)));
-            values.put("theta24", String.valueOf(round(Math.toDegrees(theta24), 2)));
-            values.put("lambda31", String.valueOf(lambda31>0? round(lambda31, 2) : "wartość minusowa"));
-            values.put("lambda32", String.valueOf(lambda32>0? round(lambda32, 2) : "wartość minusowa"));
-            values.put("lambda33", String.valueOf(lambda33>0? round(lambda33, 2) : "wartość minusowa"));
-            values.put("lambda34", String.valueOf(lambda34>0? round(lambda34, 2) : "wartość minusowa"));
+//            values.put("theta23", String.valueOf(round(Math.toDegrees(theta23), 2)));
+//            values.put("theta24", String.valueOf(round(Math.toDegrees(theta24), 2)));
+            values.put("lambda31", String.valueOf(lambda31));
+            values.put("lambda32", String.valueOf(lambda32));
+//            values.put("lambda33", String.valueOf(lambda33>0? round(lambda33, 2) : "wartość minusowa"));
+//            values.put("lambda34", String.valueOf(lambda34>0? round(lambda34, 2) : "wartość minusowa"));
         }catch (Exception e){
             Log.d(TAG, "Parse exception");
         }
@@ -265,10 +268,11 @@ public class ResultCalculationService implements IResultCalculationService {
         Double lambda3 = Double.valueOf(datas.get("lambda3"));
         Double l3 = Double.valueOf(datas.get("l3"));
         Double lambda2 = Double.valueOf(datas.get("lambda2"));
+        Double lambda1 = Double.valueOf(datas.get("lambda1"));
 
-        Double rx = Math.cos(theta1)*(l3*Math.cos(theta2)+lambda3*Math.sin(theta2))+Math.sin(theta1)*lambda2;
-        Double ry = Math.sin(theta1)*(l3*Math.cos(theta2)+lambda3*Math.sin(theta2))-Math.cos(theta1)*lambda2;
-        Double rz = l3*Math.sin(theta2)-lambda3*Math.cos(theta2);
+        Double rx = Math.cos(theta1)*(l3*Math.cos(theta2)-lambda3*Math.sin(theta2))+Math.sin(theta1)*lambda2;
+        Double ry = Math.sin(theta1)*(l3*Math.cos(theta2)-lambda3*Math.sin(theta2))-Math.cos(theta1)*lambda2;
+        Double rz = l3*Math.sin(theta2)+lambda3*Math.cos(theta2);
         values.put("rx", String.valueOf(round(rx, 2)));
         values.put("ry", String.valueOf(round(ry, 2)));
         values.put("rz", String.valueOf(round(rz, 2)));

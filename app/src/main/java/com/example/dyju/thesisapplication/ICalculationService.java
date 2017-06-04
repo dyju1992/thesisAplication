@@ -17,7 +17,7 @@ public interface ICalculationService {
 
     String getAddSimplyfiedData(String data);
 
-    String[] getr30ForDhDatas(DhDatas dhDatas);
+    String[] getPositionVectorForDhDatas(DhDatas dhDatas);
 
     HashMap<String, String> getValueForr30(String[] r30, PositionVectorDto positionVectorDto);
 

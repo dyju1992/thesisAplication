@@ -24,10 +24,10 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
     Validator validator;
     Button loginButton;
-    @NotEmpty(message = "Please enter your login")
+    @NotEmpty(message = "Proszę wprowadzić login")
     EditText login;
 
-    @NotEmpty(message = "Please enter your password")
+    @NotEmpty(message = "Proszę wprowadzić hasło")
     EditText password;
 
 

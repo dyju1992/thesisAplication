@@ -14,22 +14,24 @@ public class CalculationService implements ICalculationService {
     @Override
     public HashMap<String, String> calculateVariables(DhDatas dhDatas){
         HashMap<String, String> values = new HashMap<>();
-        String[] splitedTheta = dhDatas.getTheta().split(",");
-        String[] splitedAlpha = dhDatas.getAlpha().split(",");
-        String[] splitedA = dhDatas.getA().split(",");
-        String[] splitedD = dhDatas.getD().split(",");
+//        String[] splitedTheta = dhDatas.getTheta().split(",");
+//        String[] splitedAlpha = dhDatas.getAlpha().split(",");
+//        String[] splitedA = dhDatas.getA().split(",");
+//        String[] splitedD = dhDatas.getD().split(",");
+//
+//        TransitionMatrix transitionMatrix = new TransitionMatrix(splitedTheta, splitedAlpha, splitedD, splitedA);
+//        String[] r33 = {"0", "0", "0", "1"};
+//        String[][] firstMatrix = transitionMatrix.getAMatrixForData(0);
+//        String[][] secondMatrix = transitionMatrix.getAMatrixForData(1);
+//        String[][] thirdMatrix = transitionMatrix.getAMatrixForData(2);
+//        String[] r32 = multipleMatrixAndVector(thirdMatrix, r33);
+//        String[] r31 = multipleMatrixAndVector(secondMatrix, r32);
+//        String[] r30 = multipleMatrixAndVector(firstMatrix, r31);
+        String[] vector = getPositionVectorForDhDatas(dhDatas);
 
-        TransitionMatrix transitionMatrix = new TransitionMatrix(splitedTheta, splitedAlpha, splitedD, splitedA);
-        String[] r33 = {"0", "0", "0", "1"};
-        String[][] firstMatrix = transitionMatrix.getAMatrixForData(0);
-        String[][] secondMatrix = transitionMatrix.getAMatrixForData(1);
-        String[][] thirdMatrix = transitionMatrix.getAMatrixForData(2);
-        String[] r32 = multipleMatrixAndVector(thirdMatrix, r33);
-        String[] r31 = multipleMatrixAndVector(secondMatrix, r32);
-        String[] r30 = multipleMatrixAndVector(firstMatrix, r31);
-        values.put("rx", r30[0]);
-        values.put("ry", r30[1]);
-        values.put("rz", r30[2]);
+        values.put("rx", vector[0]);
+        values.put("ry", vector[1]);
+        values.put("rz", vector[2]);
 
 
         return values;
@@ -37,20 +39,22 @@ public class CalculationService implements ICalculationService {
     }
 
     @Override
-    public String[] getr30ForDhDatas(DhDatas dhDatas){
+    public String[] getPositionVectorForDhDatas(DhDatas dhDatas){
         String[] splitedTheta = dhDatas.getTheta().split(",");
         String[] splitedAlpha = dhDatas.getAlpha().split(",");
         String[] splitedA = dhDatas.getA().split(",");
         String[] splitedD = dhDatas.getD().split(",");
 
         TransitionMatrix transitionMatrix = new TransitionMatrix(splitedTheta, splitedAlpha, splitedD, splitedA);
-        String[] r33 = {"0", "0", "0", "1"};
-        String[][] firstMatrix = transitionMatrix.getAMatrixForData(0);
-        String[][] secondMatrix = transitionMatrix.getAMatrixForData(1);
-        String[][] thirdMatrix = transitionMatrix.getAMatrixForData(2);
-        String[] r32 = multipleMatrixAndVector(thirdMatrix, r33);
-        String[] r31 = multipleMatrixAndVector(secondMatrix, r32);
-        return multipleMatrixAndVector(firstMatrix, r31);
+        String[] r = {"0", "0", "0", "1"};
+        List<String[][]> matrices = new ArrayList<>();
+        for (int i =0; i<splitedA.length; i++){
+            matrices.add(0, transitionMatrix.getAMatrixForData(i));
+        }
+        for(String[][] matrix : matrices){
+            r = multipleMatrixAndVector(matrix, r);
+        }
+        return r;
     }
 
     @Override

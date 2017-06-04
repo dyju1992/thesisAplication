@@ -86,10 +86,11 @@ public class AddNewManipulatorActivity extends AppCompatActivity implements Vali
     }
 
     private boolean allParametersHasGoodLength(){
-        boolean isValid = a.getText().toString().split(Pattern.quote(",")).length==3 && theta.getText().toString().split(Pattern.quote(",")).length==3 &&
-                alpha.getText().toString().split(Pattern.quote(",")).length==3 && d.getText().toString().split(Pattern.quote(",")).length==3;
+        boolean isValid = a.getText().toString().split(Pattern.quote(",")).length == theta.getText().toString().split(Pattern.quote(",")).length &&
+                alpha.getText().toString().split(Pattern.quote(",")).length == d.getText().toString().split(Pattern.quote(",")).length &&
+                a.getText().toString().split(Pattern.quote(",")).length == alpha.getText().toString().split(Pattern.quote(",")).length;
         if(isValid==false){
-            Toast.makeText(this, "W manipulatorze trójczłonowym powinno być po trzy parametry w notacji Denavita Hartenberga", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Ilość poszczególnych zmiennych przegubowy powinna byc taka sama. Sprawdź czy podałeś wartości wszystkich zmiennych", Toast.LENGTH_LONG).show();
         }
         return isValid;
     }

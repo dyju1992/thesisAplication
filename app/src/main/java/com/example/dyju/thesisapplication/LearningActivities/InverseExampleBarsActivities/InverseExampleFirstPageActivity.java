@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import com.example.dyju.thesisapplication.R;
 
 
-public class FirstPageExamplesLvl1 extends Fragment {
+public class InverseExampleFirstPageActivity extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

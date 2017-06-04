@@ -5,9 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 
-public class ExampleLvl1SectionPageAdapter extends FragmentPagerAdapter {
+public class SimpleExampleSectionPageAdapter extends FragmentPagerAdapter {
 
-    public ExampleLvl1SectionPageAdapter(FragmentManager fragmentManager){
+    public SimpleExampleSectionPageAdapter(FragmentManager fragmentManager){
         super(fragmentManager);
     }
 
@@ -18,7 +18,7 @@ public class ExampleLvl1SectionPageAdapter extends FragmentPagerAdapter {
 
         switch (position){
             case 0:
-                return new FirstPageExamplesLvl1();
+                return new InverseExampleFirstPageActivity();
             case 1:
                 return new FirstExampleThema();
             case 2:
